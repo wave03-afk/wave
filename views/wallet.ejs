@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave</title>
+    <link rel="stylesheet" href="/fonts/css/all.css" />
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+    <div class="wallet-body">
+        <span class="wallet-head-box">
+            <i class="fa fa-arrow-left wallet-b-i"></i>
+            <h5 class="wallet-head-text">Add Wallet</h5>
+        </span>
+        <div class="wallet-content-body">
+            <span class="wallet-horizontal-body w-h-b-b">
+                <h5 class="w-h-c bank-in-text">Bank name</h5>
+                <input class="w-h-in bank-in" type="text" placeholder="whats your bank name">
+            </span>
+            <span class="wallet-horizontal-body">
+                <h5 class="w-h-c account-number-in-text">Account number</h5>
+                <input class="w-h-in account-number-in" type="text" placeholder="whats your account number">
+            </span>
+            <span class="wallet-horizontal-body">
+                <h5 class="w-h-c account-name-in-text">Account name</h5>
+                <input class="w-h-in account-name-in" type="text" placeholder="whats your account name">
+            </span>
+            <span class="wallet-horizontal-body">
+                <h5 class="w-h-c account-type-in-text">Account type</h5>
+                <input class="w-h-in account-type-in" type="text" placeholder="savings or current">
+            </span>
+            <h5 class="wallet-alart"></h5>
+            <span class="add-bank-box">
+            <button class="add-bank">Add Wallet</button>
+            </span>
+        </div>
+        <div class="account-info">
+        <h5 class="account-info-head-text">Wallet details</h5>
+        <span class="account-name-box a-i-b">
+          <h5 class="account-name a-i-t">Account name:</h5>
+          <h5 class="account-name-text a-i-t a-i-m-t">John Will</h5>
+        </span>
+        <span class="account-number-box a-i-b">
+          <h5 class="account-number a-i-t">Account number:</h5>
+          <h5 class="account-number-text a-i-t a-i-m-t">9034154937</h5>
+        </span>
+        <span class="account-bank-box a-i-b">
+          <h5 class="account-bank a-i-t">Bank name:</h5>
+          <h5 class="account-bank-text a-i-t a-i-m-t">Opay</h5>
+        </span>
+      </div>
+    </div>
+</body>
+<script>
+    const walletBackBtw= document.querySelector('.wallet-b-i').addEventListener('click', ()=>{
+        const url='/home';
+        window.location.replace(url);
+    });
+    //get wallet details
+    const walletDetails= async()=>{
+        const userData= JSON.parse(localStorage.getItem('Wave_user'));
+        const userId= userData.userId;
+        const authorization= userData.authorization;
+        if(!userId) return;
+        try{
+            const url=`wallet/${userId}/u/a/d`
+            const data= await fetch(url,{
+                method:'GET',
+                headers:{
+                    'Authorization' : `Brear ${authorization}`,
+                    'Content-type' : 'application/json'
+                }
+            });
+            const responds= await data.json();
+            if(responds.status !== 200) return
+            document.querySelector('.account-name-text').textContent=responds.wallet.accountName;
+            document.querySelector('.account-number-text').textContent=responds.wallet.accountNumber;
+            document.querySelector('.account-bank-text').textContent=responds.wallet.bankName;
+            if(responds.wallet.accountName=== "empty") return
+            document.querySelector('.add-bank').textContent='Update Wallet';
+            return
+        }catch(error){
+            console.log(error);
+        }
+    };
+    walletDetails();
+    const addWallet=()=>{
+        //validate requst
+        const bankNameText= document.querySelector('.bank-in-text');
+        bankNameText.textContent='Bank name'; bankNameText.style.color='gray';
+        const accountNumberText= document.querySelector('.account-number-in-text');
+        accountNumberText.textContent='Account number'; accountNumberText.style.color='gray';
+        const accountNameText= document.querySelector('.account-name-in-text');
+        accountNameText.textContent='Account name'; accountNameText.style.color='gray';
+        const accountTypeText= document.querySelector('.account-type-in-text');
+        accountTypeText.textContent='Account type'; accountTypeText.style.color='gray';
+        const bankName= document.querySelector('.bank-in').value.trim();
+        const accountNumber= document.querySelector('.account-number-in').value.trim();
+        const accountName= document.querySelector('.account-name-in').value.trim();
+        const accountType= document.querySelector('.account-type-in').value.trim();
+        if(bankName === '') return bankNameText.textContent='enter bank name', bankNameText.style.color='rgb(230, 69, 69)';
+        if(accountNumber === '') return accountNumberText.textContent='enter account number', accountNumberText.style.color='rgb(230, 69, 69)';
+        if(accountName === '') return accountNameText.textContent='enter account name', accountNameText.style.color='rgb(230, 69, 69)';
+        if(accountType === '') return accountTypeText.textContent='enter account type', accountTypeText.style.color='rgb(230, 69, 69)';
+        updateWallet(bankName, accountName, accountNumber);
+    };
+    const addWalletBtw=document.querySelector('.add-bank').addEventListener('click', ()=>{addWallet();});
+    const updateWallet= async(bn, ana, anu,)=>{
+        const userData=JSON.parse(localStorage.getItem('Wave_user'));
+        const userId= userData.userId;
+        const authorization= userData.authorization;
+        const bankName= bn;
+        const accountNumber= anu;
+        const accountName=ana;
+        const accountDetails={
+                bankName : bankName,
+                accountNumber : accountNumber,
+                accountName : accountName,
+                userId: userId
+            };
+        if(!userId) return;
+        try{
+            const url='/wallet/up/d'
+            const data = await fetch(url, {
+                method: 'PATCH',
+                headers:{
+                    'Authorization' : `Brear ${authorization}`,
+                    'Content-type' : 'application/json'
+                },
+                body:JSON.stringify(accountDetails)
+            });
+            const responds= await data.json();
+            if(!responds) return
+            const userMassage= document.querySelector('.wallet-alart');
+            userMassage.textContent=responds.massage;
+            const timer= await setTimeout(()=>{
+                const url='/home';
+                window.location.replace(url);
+            },2000) 
+    
+        }catch(error){
+
+        }
+    }
+</script>
+</html>

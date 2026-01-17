@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wave</title>
+    <link rel="stylesheet" href="/fonts/css/all.css" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+
+  <body>
+    <div class="home-body">
+      <div class="head-box">
+        <h1 class="head">Welcome to Wave</h1>
+      </div>
+      <div class="head-img">
+        <img class="head-img-in" src="/images/teams.jpg" />
+      </div>
+      <div class="withdraw-alart-box">
+        <span class="fa-layers fa-fw">
+          <i class="fa-solid fa-bullhorn main-horn"></i>
+          <i class="fa-solid fa-bullhorn fa-shake shake-horn"></i>
+        </span>
+        <span class="withdraw-alart-text-box">
+          <h5 id="withdraw-alart-text">
+            ES500 11****767 withdrawal KES179 11****354
+          </h5>
+        </span>
+      </div>
+      <div class="tools-box">
+        <div class="tools-content">
+          <span class="wallet-box">
+            <div class="tools-cycle-i">
+              <span class="wallet-i"><i class="fa fa-wallet"></i></span>
+            </div>
+            <span class="tool-text">Wallet</span>
+          </span>
+          <span class="recharge-box">
+            <div class="tools-cycle-i">
+              <span class="recharge-i"><i class="fa fa-piggy-bank"></i></span>
+            </div>
+            <span class="tool-text">Recharge</span>
+          </span>
+          <span class="withdraw-box">
+            <div class="tools-cycle-i">
+              <span class="withdraw-i"
+                ><i class="fas fa-hand-holding-dollar"></i
+              ></span>
+            </div>
+            <span class="tool-text">Withdraw</span>
+          </span>
+          <span class="team-box">
+            <div class="tools-cycle-i">
+              <span class="team-i"><i class="fas fa-users"></i></span>
+            </div>
+            <span class="tool-text">Team</span>
+          </span>
+          <span class="invite-box">
+            <div class="tools-cycle-i">
+              <span class="invite-i"
+                ><i class="fa-solid fa-paper-plane"></i
+              ></span>
+            </div>
+            <span class="tool-text">Invite</span>
+          </span>
+          <span class="transaction-box">
+            <div class="tools-cycle-i">
+              <span class="transaction-i"><i class="fa fa-receipt"></i></span>
+            </div>
+            <span class="tool-text">Transactions</span>
+          </span>
+        </div>
+      </div>
+      <div class="information-box">
+        <span class="information-i"
+          ><i class="fa-solid fa-circle-info h-i-i"></i
+        ></span>
+        <h5 class="information-text">Information</h5>
+      </div>
+      <div class="info-box">
+        <div class="about-box about-wave">
+          <div class="about-text">
+            <h5 class="about-head">About Wave</h5>
+            <h5 class="about-date">2022-04-22</h5>
+          </div>
+          <span class="about-image-box"
+            ><img class="about-img" src="/images/company.jpg"
+          /></span>
+        </div>
+        <div class="about-document-box about-box">
+          <div class="about-text">
+            <h5 class="document-head about-head">
+              Wave Official Commercial Sevice Certificate
+            </h5>
+            <h5 class="document-date about-date">2023-11-07</h5>
+          </div>
+          <span class="document-image-box about-image-box"
+            ><img class="about-img" src="/images/certificate1.jpg"
+          /></span>
+        </div>
+        <div class="about-invest-box about-box">
+          <div class="about-text">
+            <h5 class="invest-head about-head">
+              How to invest in Wave? How much return can i get?
+            </h5>
+            <h5 class="invest-date about-date">2026-01-01</h5>
+          </div>
+          <span class="invest-image-box about-image-box"
+            ><img class="about-img" src="/images/how-to-invest.jpg"
+          /></span>
+        </div>
+      </div>
+      <div class="end-tool-box">
+        <div class="end-tool">
+          <div class="home-box">
+            <spna class="home-i-t" data-page="home"
+              ><i class="fa fa-home e-i"></i>
+              <h5 class="home-t e-t">Home</h5>
+            </spna>
+          </div>
+          <div class="products-box">
+            <spna class="products-i-t" data-page="products"
+              ><i class="fa-solid fa-cube e-i"></i>
+              <h5 class="products-t e-t">Products</h5>
+            </spna>
+          </div>
+          <div class="me-box">
+            <spna class="me-i-t" data-page="me"
+              ><i class="fa fa-user e-i"></i>
+              <h5 class="me-t e-t">Me</h5>
+            </spna>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    //user interraction alert
+    let intaractionsCounter = 0;
+    const intaractions = {
+      deposit: [
+        "080****767 recharge 071****354 withdrawal",
+        "071****147 recharge 080****342 withdrawal",
+        "081****667 withdrawal 091****332 recharge",
+        "071****141 withdrawal 080****212 recharge",
+        "090****167 withdrawal 081****256 withdrawal",
+        "070****940 withdrawal 080****442 recharge",
+        "080****367 withdrawal 070****894 recharge",
+        "070****665 withdrawal 080****102 recharge",
+        "081****272 recharge 081****114 recharge",
+        "091****042 recharge 090****872 recharge",
+        "080****787 withdrawal 070****159 recharge",
+        "070****887 recharge 080****482 recharge",
+        "080****707 recharge 071****202 withdrawal",
+        "070****144 withdrawal 080****331 withdrawal",
+        "080****660 withdrawal 071****200 withdrawal",
+        "071****000 withdrawal 080****397 withdrawal",
+        "080****902 withdrawal 091****354 withdrawal",
+        "090****107 recharge 081****311 recharge",
+        "090****921 recharge 081****682 withdrawal",
+        "091****147 withdrawal 080****401 withdrawal",
+        "091****007 withdrawal 090****124 withdrawal",
+        "071****228 recharge 080****848 recharge",
+        "091****010 recharge 070****120 withdrawal",
+        "071****928 recharge 080****861 withdrawal",
+        "091****117 recharge 090****394 withdrawal",
+        "071****118 recharge 080****908 recharge",
+      ],
+
+      withdraw: [
+        "080****767 withdrawal 071****354 recharge",
+        "071****147 withdrawal 080****342 recharge",
+        "081****667 recharge 091****332 withdrawal",
+        "071****141 recharge 080****212 withdrawal",
+        "090****167 recharge 081****256 withdrawal",
+        "070****940 recharge 080****442 withdrawal",
+        "080****367 recharge 070****894 withdrawal",
+        "070****665 recharge 080****102 withdrawal",
+        "081****272 recharge 081****114 withdrawal",
+        "091****042 withdrawal 090****872 withdrawal",
+        "080****787 recharge 070****159 withdrawal",
+        "070****887 withdrawal 080****482 recharge",
+        "080****707 withdrawal 071****202 recharge",
+        "070****144 withdrawal 080****331 recharge",
+        "080****660 withdrawal 071****200 recharge",
+        "071****000 withdrawal 080****397 recharge",
+        "080****902 recharge 091****354 recharge",
+        "090****107 recharge 081****311 withdrawal",
+        "090****921 withdrawal 081****682 recharge",
+        "091****147 withdrawal 080****401 recharge",
+        "091****007 recharge 090****124 recharge",
+        "071****228 recharge 080****848 withdrawal",
+        "091****010 withdrawal 070****120 recharge",
+        "071****928 withdrawal 080****861 recharge",
+        "091****117 recharge 090****394 recharge",
+        "071****118 withdrawal 080****908 withdrawal",
+      ],
+    };
+    const randomIndex = Math.floor(Math.random() * intaractions.deposit.length);
+    intaractionsCounter = randomIndex;
+    const inderactionDisplay = document.querySelector("#withdraw-alart-text");
+    const data = `${intaractions.deposit[intaractionsCounter]} ${intaractions.withdraw[intaractionsCounter]}`;
+    inderactionDisplay.textContent = data;
+    //
+    setInterval(() => {
+      intaractionsCounter = intaractionsCounter + 1;
+      if (intaractionsCounter === intaractions.deposit.length) {
+        intaractionsCounter = 0;
+      }
+      const recargeOrWithdrawal = Math.floor(Math.random() * 2);
+      const inderactionDisplay = document.querySelector("#withdraw-alart-text");
+      const mainHorn = document.querySelector(".main-horn");
+      const shakeHorn = document.querySelector(".shake-horn");
+      if (recargeOrWithdrawal === 0) {
+        mainHorn.style.display = "none";
+        shakeHorn.style.display = "block";
+        const data = `${intaractions.deposit[intaractionsCounter]} ${intaractions.withdraw[intaractionsCounter]}`;
+        inderactionDisplay.textContent = data;
+        setTimeout(() => {
+          mainHorn.style.display = "block";
+          shakeHorn.style.display = "none";
+        }, 700);
+      } else {
+        mainHorn.style.display = "none";
+        shakeHorn.style.display = "block";
+        const data = `${intaractions.withdraw[intaractionsCounter]} ${intaractions.deposit[intaractionsCounter]}`;
+        inderactionDisplay.textContent = data;
+        setTimeout(() => {
+          mainHorn.style.display = "block";
+          shakeHorn.style.display = "none";
+        }, 700);
+      }
+    }, 3000);
+    document.querySelector(".fa-home").style.color = "orange";
+    document.addEventListener("click", (e) => {
+      const target = e.target.closest("[data-page]");
+      if (target) {
+        switch (target.dataset.page) {
+          case "home":
+            window.location.replace("/home");
+            break;
+          case "products":
+            window.location.replace("/products");
+            break;
+          case "me":
+            window.location.replace("/user");
+            break;
+          default:
+            break;
+        }
+      }
+    });
+    //transactions
+    const transactionBtw = document
+      .querySelector(".fa-receipt")
+      .addEventListener("click", () => {
+        transaction();
+      });
+    const transaction = () => {
+      const url = "/transaction";
+      window.location.replace(url);
+    };
+    //withdraw
+    const withdrawBtw = document
+      .querySelector(".fa-hand-holding-dollar")
+      .addEventListener("click", () => {
+        withdraw();
+      });
+    const withdraw = () => {
+      const url = "/withdraw";
+      window.location.replace(url);
+    };
+    //recarge
+    const recargeBtw = document
+      .querySelector(".recharge-i")
+      .addEventListener("click", () => {
+        const url = "/recharge";
+        window.location.replace(url);
+      });
+    //wallet
+    const walletBtw = document
+      .querySelector(".fa-wallet")
+      .addEventListener("click", () => {
+        const url = "/wallet";
+        window.location.replace(url);
+      });
+    //team
+    const teamBtw = document
+      .querySelector(".fa-users")
+      .addEventListener("click", () => {
+        const url = "/team";
+        window.location.replace(url);
+      });
+    //invite
+    const inviteBtw = document
+      .querySelector(".fa-paper-plane")
+      .addEventListener("click", (req, res) => {
+        const url = "/invite";
+        window.location.replace(url);
+      });
+    //about company
+    const aboutCompanyBtw = document
+      .querySelector(".about-wave")
+      .addEventListener("click", () => {
+        const url = "/about/company";
+        window.location.replace(url);
+      });
+    //how to invest
+    const howToInvestBtw = document
+      .querySelector(".about-invest-box")
+      .addEventListener("click", () => {
+        const url = "/about/how/invest";
+        window.location.replace(url);
+      });
+  </script>
+</html>

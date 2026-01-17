@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave</title>
+    <link rel="stylesheet" href="/fonts/css/all.css" />
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+    <div class="deposit-body">
+        <div class="deposit-content-box">
+            <span class="deposit-head-text-box">
+            <i class="fa fa-arrow-left d-b-i"></i>
+            <h3 class="deposit-head-text">Enter amount to send</h3>
+            </span>
+            <div class="deposit-in-content-box">
+                <span class="amount-in-box">
+                <h5 class="d-in-amount-text">Amount</h5>
+                <input class="in-d-amout" type="text" placeholder="enter amount">
+                </span>
+                <span class="deposit-terms-condition">
+                    <span class="deposit-terms">
+                        <h5 class="d-terms-text">.Enjoy fast and swift deposit</h5>
+                        <h5 class="d-terms-text">.Minimun deposit (&#8358;)1,000</h5>
+                        <h5 class="d-terms-text">.Maximun deposit (&#8358;)1,000,000</h5>
+                    </span>
+                </span>
+            </div>
+            <button class="deposit-btw">Send now</button>
+        </div>
+        <h5 class="end-terms deposit-terms-end-text">
+        By continuing you confirm that you agree with all terms & condition
+      </h5>
+    </div>
+</body>
+<script>
+    //
+    const depositBtw=document.querySelector('.d-b-i').addEventListener('click',()=>{
+        const url='/home';
+        window.location.replace(url);
+    });
+    const sendBtw=document.querySelector('.deposit-btw').addEventListener('click',()=>{
+        const amountText=document.querySelector('.d-in-amount-text');
+        amountText.textContent='Amount'; amountText.style.color='gray';
+        const amountIn=document.querySelector('.in-d-amout').value.trim();
+        if(amountIn === '') return amountText.textContent='enter amount', amountText.style.color='rgb(230, 69, 69)';
+        if(!Number(amountIn)) return amountText.textContent='invalid amount', amountText.style.color='rgb(230, 69, 69)';
+        if(Number(amountIn) < 1000) return amountText.textContent='minimum deposit is 1000', amountText.style.color='rgb(230, 69, 69)';
+        const value=Number(amountIn);
+        const url=`/recharge/${value}/payment`;
+        window.location.replace(url);
+    })
+</script>
+</html>

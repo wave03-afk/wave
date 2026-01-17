@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wave</title>
+    <link rel="stylesheet" href="/fonts/css/all.css" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="addmin-dasbord-body">
+      <div class="perent-contener-admin">
+        <div class="first-chlid-admin">
+          <span class="first-chlid-admin-content">
+            <div class="admin-payment-and-withdrawal-body">
+              <h5 class="admin-payment-and-withdrawal-head-text">Type</h5>
+              <div class="admin-payment-box">
+                <i class="fab fa-paypal"></i>
+                <h5 class="admin-payment-text">Payment</h5>
+              </div>
+              <div class="admin-withdrawal-box">
+                <i class="fa-solid fa-money-bill-transfer"></i>
+                <h5 class="admin-withdrawal-text">Withdrawal</h5>
+              </div>
+            </div>
+            <div class="admin-succesful-rejected-and-pending-body">
+              <h5 class="admin-succesful-rejected-and-pending-head-text">
+                Status
+              </h5>
+              <div class="admin-succesful-box">
+                <i class="fas fa-check-circle"></i>
+                <h5 class="admin-succesful-text">Succesful</h5>
+              </div>
+              <div class="admin-pending-box">
+                <i class="fa-solid fa-hourglass-half"></i>
+                <h5 class="admin-pending-text">Pending</h5>
+              </div>
+              <div class="admin-rejected-box">
+                <i class="fa-solid fa-times-circle"></i>
+                <h5 class="admin-rejected-text">Rejected</h5>
+              </div>
+              <div class="admin-all-box">
+                <i class="fas fa-check"></i>
+                <h5 class="admin-all-text">All Status</h5>
+              </div>
+            </div>
+            <div class="admin-search-body">
+              <h5 class="admin-search-head-text">Search bar</h5>
+              <div class="admin-search-date-box">
+                <h5 class="admin-search-date-text">Date</h5>
+                <input
+                  class="admin-search-date-in"
+                  type="text"
+                  placeholder="01/02/2026"
+                />
+              </div>
+              <div class="admin-search-name-box">
+                <h5 class="admin-search-name-text">Name</h5>
+                <input
+                  class="admin-search-name-in"
+                  type="text"
+                  placeholder="john"
+                />
+              </div>
+              <h5 class="search-error-alert"></h5>
+              <span class="search-box">
+                <button class="search">Search</button>
+              </span>
+            </div>
+            <div class="admin-transaction-alert-body">
+              <h5 class="admin-transaction-alert-head-text">New Transactions</h5>
+              <div class="admin-transaction-payment-alert-box">
+                <h5 class="admin-transaction-alert-payment">Payment:</h5>
+                <h5 class="admin-transaction-alert-payment-text"></h5>
+              </div>
+              <div class="admin-transaction-withdrawal-alert-box">
+                <h5 class="admin-transaction-alert-withdrawal">Withdrawal:</h5>
+                <h5 class="admin-transaction-alert-withdrawal-text"></h5>
+              </div>
+            </div>
+          </span>
+        </div>
+        <div class="middle-chlid-admin">
+          <div class="middle-chlid-admin-content-body">
+            <div class="addmin-sub-dasbord-body">
+              <span class="user-name-box sub-d-b">
+                <h5 class="user-name-text sub-t-t">User</h5>
+              </span>
+              <span class="transaction-amount-box sub-d-b">
+                <h5 class="transaction-amount sub-t-t">amount</h5>
+              </span>
+              <span class="transaction-status-box sub-d-b">
+                <h5 class="transaction-status sub-t-t">Status</h5>
+              </span>
+              <span class="transaction-date-box sub-d-b">
+                <h5 class="transaction-date sub-t-t">date</h5>
+              </span>
+            </div>
+            <div class="addim-user-content-body"></div>
+          </div>
+        </div>
+        <div class="last-chlid-admin">
+          <div class="addmin-user-tool-body">
+            <div class="addmin-user-tool-box">
+              <span class="a-u-t-i-b">
+                <span class="a-u-t-i-bx">
+                  <i class="fa fa-circle-user a-u-t-i"></i>
+                  <h5 class="a-u-n-t"></h5>
+                  <h5 class="a-u-b-t"></h5>
+                </span>
+              </span>
+              <span class="a-u-t-t-b"><span class="a-u-t-t-bx"><h5 class="a-u-t-t-t">Payment</h5><h5 class="a-u-t-st-t">Succesful</h5></span></span>
+              <span class="a-payment-u-bank-b">
+                <span class="a-payment-u-bank-bx">
+                  <h5 class="addmin-bank-name-tool-text addmin-bank-text">-</h5>
+                  <h5 class="addmin-bank-a-nu-tool-text addmin-bank-text">-</h5>
+                  <h5 class="addmin-bank-a-name-tool-text addmin-bank-text">-</h5>
+                </span>
+              </span>
+              <span class="a-payment-u-b">
+                <span class="a-payment-u-bx">
+                  <h5 class="addmin-amount-tool-text">Enter amount</h5>
+                  <input
+                    class="addmin-amount-tool-in"
+                    placeholder="enter amount"
+                  />
+                </span>
+              </span>
+              <span class="a-payment-accept-reject-b">
+                <span class="a-payment-accept-reject-bx">
+                  <button class="a-tool-reject">reject</button>
+                  <button class="a-tool-accept">accept</button>
+                </span>
+              </span>
+              <div class="addmin-coupon-b">
+                <div class="addmin-coupon-bx">
+                  <h5 class="addmin-coupon-head-text">Generate Coupon Code</h5>
+                  <input
+                    class="ad-coupon-in"
+                    placeholder="&#8358;70 &#8358;50 &#8358;100"
+                  />
+                  <h5 class="ad-coupon-text">00000</h5>
+                  <span class="a-coupon-g-s-btw-bx">
+                    <button class="a-coupon-g-s-btw">Generate</button>
+                  </span>
+                </div>
+              </div>
+              <div class="addmin-user-count-b">
+                <span class="addmin-user-count-bx">
+                  <h5 class="addmin-user-count-s-text">Total Users:</h5>
+                  <h5 class="addmin-user-count-m-text"></h5>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const authorization= JSON.parse(localStorage.getItem('Wave_user')).authorization;
+    //data array
+    let dataArrayPayment= [];
+    let dataArrayWithdrawal= [];
+    // startup
+    let startupPassPayment = true;
+    let startupPassWithdrawal = true;
+    //get data
+    const dataTransactions = {
+      paymentTransactions: [],
+      withdrawalTransactions: [],
+    };
+    //sweith
+    let type = null;
+    let status = "all";
+    // swith details
+    let dataDisplay= true;
+    //menu toolbar
+    //type
+    const paymentBtw = document.querySelector(".admin-payment-text");
+    paymentBtw.addEventListener("click", () => {
+      const withdrawal = document.querySelector(".admin-withdrawal-text");
+      withdrawal.style.color = "gray";
+      paymentBtw.style.color = "rgb(62, 223, 62)";
+      return (type = "payment"), transactionType(type, status);
+    });
+    const withdrawalBtw = document.querySelector(".admin-withdrawal-text");
+    withdrawalBtw.addEventListener("click", () => {
+      const payment = document.querySelector(".admin-payment-text");
+      payment.style.color = "gray";
+      withdrawalBtw.style.color = "rgb(62, 223, 62)";
+      return (type = "withdraw"), transactionType(type, status);
+    });
+    //status
+    const succesfulBtw = document.querySelector(".admin-succesful-text");
+    succesfulBtw.addEventListener("click", () => {
+      const all = document.querySelector(".admin-all-text");
+      all.style.color = "gray";
+      const pending = document.querySelector(".admin-pending-text");
+      pending.style.color = "gray";
+      const rejected = document.querySelector(".admin-rejected-text");
+      rejected.style.color = "gray";
+      succesfulBtw.style.color = "rgb(62, 223, 62)";
+      return (status = "Successful"), transactionType(type, status);
+    });
+    const pendingBtw = document.querySelector(".admin-pending-text");
+    pendingBtw.addEventListener("click", () => {
+      const all = document.querySelector(".admin-all-text");
+      all.style.color = "gray";
+      const rejected = document.querySelector(".admin-rejected-text");
+      rejected.style.color = "gray";
+      const succesful = document.querySelector(".admin-succesful-text");
+      succesful.style.color = "gray";
+      pendingBtw.style.color = "rgb(62, 223, 62)";
+      return (status = "pending"), transactionType(type, status);
+    });
+    const rejectedBtw = document.querySelector(".admin-rejected-text");
+    rejectedBtw.addEventListener("click", () => {
+      const all = document.querySelector(".admin-all-text");
+      all.style.color = "gray";
+      const succesful = document.querySelector(".admin-succesful-text");
+      succesful.style.color = "gray";
+      const pending = document.querySelector(".admin-pending-text");
+      pending.style.color = "gray";
+      rejectedBtw.style.color = "rgb(62, 223, 62)";
+      return (status = "rejected"), transactionType(type, status);
+    });
+    const allBtw = document.querySelector(".admin-all-text");
+    allBtw.addEventListener("click", () => {
+      const succesful = document.querySelector(".admin-succesful-text");
+      succesful.style.color = "gray";
+      const pending = document.querySelector(".admin-pending-text");
+      pending.style.color = "gray";
+      rejectedBtw.style.color = "gray";
+      allBtw.style.color = "rgb(62, 223, 62)";
+      return (status = "all"), transactionType(type, status);
+    });
+    // update dom to users need
+    function transactionType(type, status, date = null, name = null) {
+      dataDisplay= true;
+      dataArrayPayment= [];
+      dataArrayWithdrawal= [];
+      const transactionType = type;
+      const transactionStatus = status;
+      const transactionDate = date;
+      const transactionName = name;
+      // remove all chlid from dom
+      const grandperent = document.querySelector(".addim-user-content-body");
+      const perent = document.querySelectorAll(".addim-user-content-box");
+      for (const element of perent) {
+        grandperent.removeChild(element);
+      }
+      // validation type status
+      if (type === "payment") {
+        const paymentTransactions = dataTransactions.paymentTransactions;
+        // check if status equal all
+        if (status === "all") {
+          for (let i = 0; i < paymentTransactions.length; i++) {
+            // check if user searches
+            const data = paymentTransactions[i];
+            if (transactionDate && transactionName) {
+              // check if date and name was searched
+              const date = data.date.split(" ")[0];
+              const name = data.name;
+              if (date === transactionDate) {
+                if (transactionName === name) {
+                  const newData = data;
+                  renderPayment(newData);
+                }
+              }
+            } //
+            if (transactionDate) {
+              //checks if date was searched
+              const date = data.date.split(" ")[0];
+              if (date === transactionDate) {
+                const newData = data;
+                renderPayment(newData);
+              }
+            } //
+            if (transactionName) {
+              //checks if name was searched
+              const name = data.name;
+              if (transactionName === name) {
+                const newData = data;
+                renderPayment(newData);
+              }
+            }
+            if (!transactionDate && !transactionName) {
+              renderPayment(data);
+            }
+          }
+        } else {
+          for (let i = 0; i < paymentTransactions.length; i++) {
+            const data = paymentTransactions[i];
+            if (data.status === transactionStatus) {
+              // check if user searches
+              if (transactionDate && transactionName) {
+                // check if date and name was searched
+                const date = data.date.split(" ")[0];
+                const name = data.name;
+                if (date === transactionDate) {
+                  if (transactionName === name) {
+                    const newData = data;
+                    renderPayment(newData);
+                  }
+                }
+              } //
+              if (transactionDate) {
+                //checks if date was searched
+                const date = data.date.split(" ")[0];
+                if (date === transactionDate) {
+                  const newData = data;
+                  renderPayment(newData);
+                }
+              } //
+              if (transactionName) {
+                //checks if name was searched
+                const name = data.name;
+                if (transactionName === name) {
+                  const newData = data;
+                }
+                renderPayment(newData);
+              }
+              if (!transactionDate && !transactionName) {
+                renderPayment(data);
+              }
+            }
+          }
+        }
+      }
+      if (type === "withdraw") {
+        const withdrawalTransactions = dataTransactions.withdrawalTransactions;
+        // check if status equal all
+        if (status === "all") {
+          for (let i = 0; i < withdrawalTransactions.length; i++) {
+            // check if user searches
+            const data = withdrawalTransactions[i];
+            if (transactionDate && transactionName) {
+              // check if date and name was searched
+              const date = data.date.split(" ")[0];
+              const name = data.name;
+              if (date === transactionDate) {
+                if (transactionName === name) {
+                  const newData = data;
+                  renderPayment(newData);
+                }
+              }
+            } //
+            if (transactionDate) {
+              //checks if date was searched
+              const date = data.date.split(" ")[0];
+              if (date === transactionDate) {
+                const newData = data;
+                renderPayment(newData);
+              }
+            } //
+            if (transactionName) {
+              //checks if name was searched
+              const name = data.name;
+              if (transactionName === name) {
+                const newData = data;
+                renderPayment(newData);
+              }
+            }
+            if (!transactionDate && !transactionName) {
+              renderPayment(data);
+            }
+          }
+        } else {
+          for (let i = 0; i < withdrawalTransactions.length; i++) {
+            const data = withdrawalTransactions[i];
+            if (data.status === transactionStatus) {
+              // check if user searches
+              if (transactionDate && transactionName) {
+                // check if date and name was searched
+                const date = data.date.split(" ")[0];
+                const name = data.name;
+                if (date === transactionDate) {
+                  if (transactionName === name) {
+                    const newData = data;
+                    renderPayment(newData);
+                  }
+                }
+              } //
+              if (transactionDate) {
+                //checks if date was searched
+                const date = data.date.split(" ")[0];
+                if (date === transactionDate) {
+                  const newData = data;
+                  renderPayment(newData);
+                }
+              } //
+              if (transactionName) {
+                //checks if name was searched
+                const name = data.name;
+                if (transactionName === name) {
+                  const newData = data;
+                }
+                renderPayment(newData);
+              }
+              if (!transactionDate && !transactionName) {
+                renderPayment(data);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    // validate search
+   const searchBtw= document.querySelector('.search');
+    searchBtw.addEventListener('click', ()=>{
+      const searchErrorAlert= document.querySelector('.search-error-alert');
+        searchErrorAlert.textContent='';
+      const dateIn= document.querySelector('.admin-search-date-in').value.trim();
+      const nameIn= document.querySelector('.admin-search-name-in').value.trim();
+      if (dateIn === '' && nameIn === '') return searchErrorAlert.textContent='both fileds cant be empty';
+      if(dateIn !== '' && nameIn !== ''){
+        transactionType(type, status, dateIn, nameIn)
+      }
+      if(dateIn !== ''){
+        transactionType(type, status, dateIn, null)
+      }
+      if(nameIn !== ''){
+        transactionType(type, status, null, nameIn)
+      }
+    })
+
+    //get total users
+    const totalUsers = async (a) => {
+      const authorization =a;
+      try {
+        const url = "/admin/user/g/a/u/c";
+        const count = await fetch(url, {
+          method: "GET",
+          headers: {
+            Authorization: `Bear ${authorization}`,
+            "Content-type": "application/json",
+          },
+        });
+        const responds = await count.json();
+        const totalCount = responds.totalusers;
+        const totalCountDisplay = document.querySelector(
+          ".addmin-user-count-m-text"
+        );
+        totalCountDisplay.textContent = totalCount;
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    totalUsers(authorization);
+    //get data every 10mins
+    const timer = 600000;
+    setInterval(() => {
+      transactionPaymentData(authorization);
+      transactionWithdrawalData(authorization);
+    }, timer);
+    //
+    let newPayment=0;
+    //
+    const transactionPaymentData = async (a) => {
+      const authorization =a;
+      try {
+        const url = "/admin/p";
+        const paymentData = await fetch(url, {
+          method: "GET",
+          headers: {
+            Authorization: `Bear ${authorization}`,
+            "Content-type": "application/json",
+          },
+        });
+        const responds = await paymentData.json();
+        const respondsData = responds.datas;
+        const paymentTransactions = dataTransactions.paymentTransactions;
+        if (paymentTransactions.length !== respondsData.length) {
+          for (
+            let i = paymentTransactions.length;
+            i < respondsData.length;
+            i++
+          ) {
+            dataTransactions.paymentTransactions.push(respondsData[i]);
+            if (startupPassPayment) {
+              renderPayment(respondsData[i]);
+            }else{
+              newPayment= newPayment + 1;
+            }
+          }
+          document.querySelector('.admin-transaction-alert-payment-text').textContent= newPayment;
+          return (type = "payment"), (startupPassPayment = false);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    //
+    let newWithdrawal=0;
+    // transaction withdrawal
+    const transactionWithdrawalData = async (a) => {
+     const authorization =a;
+      try {
+        const url = "/admin/w";
+        const paymentData = await fetch(url, {
+          method: "GET",
+          headers: {
+            Authorization: `Bear ${authorization}`,
+            "Content-type": "application/json",
+          },
+        });
+        const responds = await paymentData.json();
+        const respondsData = responds.datas;
+        const withdrawal = dataTransactions.withdrawalTransactions;
+        if (withdrawal.length !== respondsData.length) {
+          for (let i = withdrawal.length; i < respondsData.length; i++) {
+            dataTransactions.withdrawalTransactions.push(respondsData[i]);
+            if(!startupPassWithdrawal){
+              newWithdrawal= newWithdrawal + 1
+            }
+          }
+        }
+        document.querySelector('.admin-transaction-alert-withdrawal-text').textContent= newWithdrawal;
+        return startupPassWithdrawal= false;
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    transactionWithdrawalData(authorization);
+    //
+    const balanceUi = (e) => {
+      const data = e.split("");
+      const dataHundredValue = data.length - 3;
+      const hundred = [];
+      if (dataHundredValue >= 1) {
+        for (let i = 0; i < data.length; i++) {
+          hundred.push(data[dataHundredValue + i]);
+        }
+      } else {
+        return data.join("");
+      }
+      const thousand = [];
+      const datathousand = dataHundredValue - 3;
+      if (datathousand >= 1) {
+        for (let i = datathousand; i < dataHundredValue; i++) {
+          thousand.push(data[i]);
+        }
+        const million = [];
+        for (let i = 0; i < datathousand; i++) {
+          million.push(data[i]);
+        }
+        const result = `${million.join("")},${thousand.join("")},${hundred.join(
+          ""
+        )}`;
+        return result;
+      } else {
+        const leftValue = [];
+        for (let i = 0; i < dataHundredValue; i++) {
+          leftValue.push(data[i]);
+        }
+        const result = `${leftValue.join("")},${hundred.join("")}`;
+        return result;
+      }
+    };
+    transactionPaymentData(authorization);
+    //payment render
+    const renderPayment = (e) => {
+      const data = e;
+      const status = e.status;
+      const date = e.date;
+      const amount = e.amount;
+      const name= e.name
+      const indexArrayPayment= dataArrayPayment.length;
+      const indexArrayWithdrawal = dataArrayWithdrawal.length;
+      if(e.accountName){
+        dataArrayWithdrawal.push(e);
+      }else{
+        dataArrayPayment.push(e);
+      }
+      let statusColor = null;
+      if (status === "rejected") {
+        statusColor = "red";
+      }
+      if (status === "Successful") {
+        statusColor = "green";
+      }
+      if (status === "pending") {
+        statusColor = "orange";
+      }
+      const modifedAmount = balanceUi(amount);
+      const grandperent = document.querySelector(".addim-user-content-body");
+      //creat perent and child
+      //perent
+      const perent = document.createElement("div");
+      perent.className = "addim-user-content-box";
+      // first child
+      const child1 = document.createElement("span");
+      child1.className = "a-u-b addim-sub-user-content-box";
+      //child1 chlidren
+      const child1Chlidren1 = document.createElement("i");
+      child1Chlidren1.className = "fa fa-circle-user addmin-u-i";
+      const child1Chlidren2 = document.createElement("h5");
+      child1Chlidren2.className = "a-user-n-text a-u-c-t";
+      child1Chlidren2.textContent = name;
+      child1.append(child1Chlidren1, child1Chlidren2);
+      // second child
+      const child2 = document.createElement("span");
+      child2.className = "a-s-b addim-sub-user-content-box";
+      //child2 chlidren
+      const child2Chlidren1 = document.createElement("h5");
+      child2Chlidren1.className = "a-status-n-text a-u-c-t";
+      child2Chlidren1.textContent = status;
+      child2Chlidren1.style.color = statusColor;
+      child2.append(child2Chlidren1);
+      //3rd child
+      const child3 = document.createElement("span");
+      child3.className = "a-a-b addim-sub-user-content-box";
+      //child3 chlidren
+      const child3Chlidren1 = document.createElement("h5");
+      child3Chlidren1.className = "a-amount-n-text a-u-c-t";
+      child3Chlidren1.textContent = `\u20A6${modifedAmount}`;
+      child3.append(child3Chlidren1);
+      //fouth child
+      const child4 = document.createElement("span");
+      child4.className = "a-d-b addim-sub-user-content-box";
+      //child4 chlidren
+      const child4Chlidren1 = document.createElement("h5");
+      child3Chlidren1.className = "a-date-n-text a-u-c-t";
+      child4Chlidren1.textContent = date;
+      child4.append(child4Chlidren1);
+      perent.append(child1, child3, child2, child4);
+      //
+      if(e.accountName){
+        const withdrwal= 'withdraw';
+        if(dataDisplay){
+        validateTransaction(data, withdrwal);
+        }
+        dataDisplay= false;
+        perent.setAttribute('data-id', `${withdrwal} ${indexArrayWithdrawal}`);
+        perent.addEventListener('click', (e)=>{ 
+          const target= e.target.closest("[data-id]")
+          const data= target.dataset.id;
+          userDataInfo(data);
+        });
+      }else{
+        const payment= 'payment';
+        if(dataDisplay){
+        validateTransaction(data, payment);
+        };
+        dataDisplay= false;
+        perent.setAttribute('data-id', `${payment} ${indexArrayPayment}`);
+        perent.addEventListener('click', (e)=>{ 
+          const target= e.target.closest("[data-id]")
+          const data= target.dataset.id;
+          userDataInfo(data);
+        });
+      };
+      grandperent.appendChild(perent);
+    };
+    // get data infor onclick
+    function userDataInfo(e){
+      const transactionType= e.split(' ')[0];
+      const transactionIndex= e.split(' ')[1];
+      if(transactionType === 'payment'){
+        const data= dataArrayPayment[transactionIndex];
+        validateTransaction(data, transactionType);
+      };
+      if(transactionType === 'withdraw'){
+        const data= dataArrayWithdrawal[transactionIndex]
+        validateTransaction(data, transactionType);
+      }
+    };
+    let tembData= null;
+    let transactionTypeOf= null;
+    // validate data info
+    function validateTransaction(e, t){
+      const transactionInfor=e;
+      const transactionType= t;
+      //update dom
+      const name= transactionInfor.name;
+      const amount= transactionInfor.amount;
+      const accountName= transactionInfor.accountName;
+      const accountNumber= transactionInfor.accountNumber;
+      const bankName= transactionInfor.bankName;
+      const userId= transactionInfor.userId;
+      const transactionId= transactionInfor.transactionId;
+      const status= transactionInfor.status;
+      let color= null;
+      if(status === 'Successful'){
+        color= 'green';
+      }else if(status === 'pending'){
+        color= 'orange';
+      }else if(status === 'rejected'){
+        color= 'red';
+      }
+      //
+      const type= document.querySelector('.a-u-t-t-t');
+      const displayName= document.querySelector('.a-u-n-t');
+      const displayAmount= document.querySelector('.a-u-b-t');
+      const displayBankName= document.querySelector('.addmin-bank-name-tool-text');
+      const displayAccountName= document.querySelector('.addmin-bank-a-name-tool-text');
+      const displayAccountNumber= document.querySelector('.addmin-bank-a-nu-tool-text');
+      const displayStatus= document.querySelector('.a-u-t-st-t');
+      //
+      if(transactionType === 'payment'){
+        type.textContent= 'Payment';
+        displayStatus.textContent= status;
+        displayStatus.style.color= color;
+        displayName.textContent=name;
+        displayAmount.textContent= `\u20A6${balanceUi(amount)}`;
+        displayBankName.textContent= '-'
+        displayAccountNumber.textContent= '-';
+        displayAccountName.textContent= '-'
+      }
+      if(transactionType === 'withdraw'){
+        type.textContent= 'Withdraw';
+        displayStatus.textContent= status;
+        displayStatus.style.color= color;
+        displayName.textContent=name;
+        displayAmount.textContent= `\u20A6${balanceUi(amount)}`;
+        displayBankName.textContent= bankName;
+        displayAccountNumber.textContent= accountNumber;
+        displayAccountName.textContent= accountName;
+      };
+      return tembData={
+            userId : userId,
+            amount :  amount,
+            status: "successful",
+            transactionId   :  transactionId
+          } , transactionTypeOf = transactionType
+    }
+    // validate transaction
+      const acceptBtw= document.querySelector('.a-tool-accept').addEventListener('click', async()=>{
+        const amountInput= document.querySelector('.addmin-amount-tool-in').value.trim();
+        const amountInputDisplay= document.querySelector('.addmin-amount-tool-text');
+        amountInputDisplay.textContent='Enter amount'; amountInputDisplay.style.color='gray';
+        if(amountInput === '') return amountInputDisplay.textContent='amount can\'t be empty', amountInputDisplay.style.color='red';
+        const transactionData= tembData;
+        const transactionType= transactionTypeOf
+        transactionData.amount = amountInput;
+        if(transactionType === 'payment'){
+        try{
+          const url= '/admin/p/up/p';
+          const authorization0 = authorization;
+          const data= await fetch(url, {
+            method: 'PATCH',
+            headers: {
+              'Authorization' : `Bear ${authorization0}`, 
+              'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify(transactionData)
+          });
+          const responds= await data.json();
+          alert(responds.massage);
+        }catch(error){
+          console.log(error);
+        }
+      }else if (transactionType === 'withdraw'){
+        try{
+          const url= '/admin/w/up/w';
+          const authorization0 =authorization;
+          const data= await fetch(url, {
+            method: 'PATCH',
+            headers: {
+              'Authorization' : `Bear ${authorization0}`, 
+              'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify(transactionData)
+          });
+          const responds= await data.json();
+          alert(responds.massage);
+        }catch(error){
+          console.log(error);
+        }
+      }
+      });
+      // get all coupon codes
+      let couponCodesStored=[]
+      const couponCodes= async(a)=>{
+        const authorization =a;
+        try{
+          const url='/admin/cupn/up/g/c';
+          const data= await fetch(url, {
+            method: 'GET',
+            headers: {
+              'Authorization' : `Bear ${authorization}`,
+              'Content-type' : 'application/json'
+            }
+          })
+          const coupon= await data.json();
+          if(coupon.status === 403){
+            console.log('error'+ coupon.massage);
+          }
+          for(const code of coupon.data){
+            const couponCode= code.couponCode;
+            couponCodesStored.push(couponCode)
+          };
+        }catch(error){
+          console.log(error);
+        }
+      };
+      couponCodes(authorization);
+      // create new coupon code
+      const newCouponCode= ()=>{
+        let id=null;
+        do{
+           id = Math.random().toString(36).slice(2, 11);
+        }while(couponCodesStored.includes(id))
+        return id;
+      };
+      // validete code code input requst 
+      let generateCouponAndSaveSwicth= false;
+      let couponDetails=null;
+      const generateCoupon= ()=>{
+          const amountCouponMessageAlert= document.querySelector('.addmin-coupon-head-text');
+          amountCouponMessageAlert.textContent='Generate Coupon Code'; amountCouponMessageAlert.style.color='gray';
+          const amountIn = document.querySelector('.ad-coupon-in').value.trim();
+          if(amountIn === '') return amountCouponMessageAlert.textContent='amount cant be empty', amountCouponMessageAlert.style.color='red';
+          const amount1= amountIn.split(' ')[0];
+          const amount2= amountIn.split(' ')[1]; 
+          const amount3= amountIn.split(' ')[2];
+          if(!amount1 || !amount2 || !amount3) return amountCouponMessageAlert.textContent='expecting 3 value input', amountCouponMessageAlert.style.color='red';
+          if(!Number(amount1) || !Number(amount2) || !Number(amount3) ) return amountCouponMessageAlert.textContent='invalied amount', amountCouponMessageAlert.style.color='red';
+          const couponCodeDisplay= document.querySelector('.ad-coupon-text');
+          const couponCode= newCouponCode();
+          if(!couponCode) return amountCouponMessageAlert.textContent='somthing went wrong', amountCouponMessageAlert.style.color='red';
+          couponCodeDisplay.textContent= couponCode;
+          document.querySelector('.a-coupon-g-s-btw').textContent='Save';
+          const date= new Date();
+          const day= date.getDate();
+          const month= date.getMonth()+1;
+          const year= date.getFullYear();
+          const fulldate=`${day >=10 ? day : '0'+day}/${month >=10 ? month : '0' + month}/${year}`;
+          const couponData={
+            couponCode: couponCode,
+            couponAmount : amountIn,
+            couponActiveDate : fulldate
+          };
+          return couponDetails= couponData, generateCouponAndSaveSwicth= true;
+      };
+      const saveCouponCouponCode= async(a)=>{
+        const couponData={
+          couponAmount :  couponDetails.couponAmount,
+          couponCode : couponDetails.couponCode,
+          couponActiveDate   :  couponDetails.couponActiveDate
+        };
+        try{
+          const authorization= a;
+          const url= '/admin/cupn/up';
+          const coupon= await fetch(url, {
+            method: 'POST',
+            headers: {
+              'Authorization' : `Bear ${authorization}`,
+              'Content-type' : 'application/json'
+            },
+            body: JSON.stringify(couponData)
+          });
+          const responds= await coupon.json();
+          alert(responds.massage);
+          document.querySelector('.a-coupon-g-s-btw').textContent='Generate'
+          return couponDetails= null, generateCouponAndSaveSwicth= false;
+        }catch(error){
+          console.log(error);
+        }
+      }
+
+
+
+      const generateCouponAndSaveBtw= document.querySelector('.a-coupon-g-s-btw');
+        generateCouponAndSaveBtw.addEventListener('click', ()=>{
+          if(!generateCouponAndSaveSwicth){
+          generateCoupon();
+          }else{
+            saveCouponCouponCode(authorization);
+          }
+        });
+  </script>
+</html>

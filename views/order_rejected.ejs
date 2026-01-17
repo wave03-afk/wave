@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave</title>
+    <link rel="stylesheet" href="/fonts/css/all.css" />
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+    <div class="order-rejected-body">
+        <div class="order-rejected-content-box">
+            <span class="order-rejected-head-box">
+                <img class="order-rejected-img" src="/images/reject.jpg">
+            </span>
+            <span class="order-rejected-head-text-box">
+            <h5 class="order-rejected-head-text">
+                Order rejected !
+            </h5>
+            </span> 
+            <h5 class="rejected-text">Can't place order balance is to low </h5>
+            <span class="order-rejected-btw-box">
+            <button class="order-rejected-btw">Continue</button>
+            </span>
+        </div>
+    </div>
+</body>
+<script>
+    const continueBtw= document.querySelector('.order-rejected-btw').addEventListener('click', ()=>{
+        const url='/products';
+        window.location.replace(url);
+    });
+</script>
+</html>

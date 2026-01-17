@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wave</title>
+    <link rel="stylesheet" href="/fonts/css/all.css" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="withdrawal-body">
+      <div class="loading-animation-body">
+          <div class="loading-animation-box">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+      <div class="withdrawal-back">
+        <div class="withdrawal-back-content-box">
+          <i class="fa fa-arrow-left w-b-i"></i>
+          <span class="withdraw-head-text-box"
+            ><h5 class="withdraw-head-text">Withdrawal</h5></span
+          >
+        </div>
+      </div>
+      <div class="Balance-box">
+        <span class="balance-text-i">
+        <i class="fa fa-naira-sign b-n-i"></i>
+        <h5 class="Balance-text">0.00</h5>
+        </span>
+        <span class="withdrawal-fee-box">
+          <h5 class="withdrawal-fee-text">withdrawal fee &#8358;50</h5>
+        </span>
+      </div>
+      <div class="withdrawal-terms">
+        <h5 class="daily-withdrawal">Daliy withdrawal</h5>
+        <h5 class="min-withdrawal min-max">
+          Minimun:<i class="fa-solid fa-naira-sign"></i>2,000
+        </h5>
+        <h5 class="max-withdrawal min-max">
+          Maximun:<i class="fa-solid fa-naira-sign"></i>500,000
+        </h5>
+      </div>
+      <h5 class="withdraw-alart-text0"></h5>
+      <span class="withdrawal-input-content-box">
+        <h5 class="withdrawal-input-text in-head-text">Amount</h5>
+        <span class="amount-input-contaner w-in-b">
+          <input class="amount-input a-p-in" type="text" placeholder="enter amount" />
+        </span>
+        <h5 class="password-input-text in-head-text">Password</h5>
+        <span class="withdrawal-password-box w-in-b">
+            <i class="fa fa-lock a-i-n-i"></i>
+          <input class="password-input a-p-in" type="text" placeholder="whats your password" />
+        </span>
+        <button class="withdrawal-btw">Withdraw</button>
+      </span>
+      <div class="account-info">
+        <h5 class="account-info-head-text">Wallet details</h5>
+        <span class="account-name-box a-i-b">
+          <h5 class="account-name a-i-t">Account name:</h5>
+          <h5 class="account-name-text a-i-t a-i-m-t"></h5>
+        </span>
+        <span class="account-number-box a-i-b">
+          <h5 class="account-number a-i-t">Account number:</h5>
+          <h5 class="account-number-text a-i-t a-i-m-t"></h5>
+        </span>
+        <span class="account-bank-box a-i-b">
+          <h5 class="account-bank a-i-t">Bank name:</h5>
+          <h5 class="account-bank-text a-i-t a-i-m-t"></h5>
+        </span>
+      </div>
+    </div>
+  </body>
+  <script>
+    const backBtw=document.querySelector('.fa-arrow-left').addEventListener('click',()=>{
+      const url='/home';
+      window.location.replace(url);
+    })
+    //get user balance
+    const balance = async () => {
+      userData = JSON.parse(localStorage.getItem("Wave_user"));
+      const userId = {
+        userId: userData.userId,
+      };
+      const authorization = userData.authorization;
+      try {
+        const url = "/withdraw/user";
+        const user = await fetch(url, {
+          method: "POST",
+          headers: {
+            Authorization: `Bear ${authorization}`,
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify(userId),
+        });
+        const responds = await user.json();
+        if (responds.status !== 200) return console.log(responds.massage);
+        const data = responds.data;
+        userDetails(data);
+        userAcount(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    balance();
+    //update withdrawal DOM
+    let userD=null;
+    const userDetails = (e) => {
+      const amount = String(e.balance);
+      userD=e;
+      document.querySelector(".Balance-text").textContent = balanceUi(amount);
+    };
+    // user balance ui
+    const balanceUi = (e) => {
+      const data = e.split("");
+      const dataHundredValue = data.length - 3;
+      const hundred = [];
+      if (dataHundredValue >= 1) {
+        for (let i = 0; i < data.length; i++) {
+          hundred.push(data[dataHundredValue + i]);
+        }
+      } else {
+        return data.join("");
+      }
+      const thousand = [];
+      const datathousand = dataHundredValue - 3;
+      if (datathousand >= 1) {
+        for (let i = datathousand; i < dataHundredValue; i++) {
+          thousand.push(data[i]);
+        }
+        const million = [];
+        for (let i = 0; i < datathousand; i++) {
+          million.push(data[i]);
+        }
+        const result = `${million.join("")},${thousand.join("")},${hundred.join(
+          ""
+        )}`;
+        return result;
+      } else {
+        const leftValue = [];
+        for (let i = 0; i < dataHundredValue; i++) {
+          leftValue.push(data[i]);
+        }
+        const result = `${leftValue.join("")},${hundred.join("")}`;
+        return result;
+      }
+    };
+    let userAcountPass=false;
+    // acount infor render
+    const userAcount=(e)=>{
+      const data=e;
+        document.querySelector('.account-bank-text').textContent=data.bankName;
+        document.querySelector('.account-number-text').textContent=data.accountName;
+        document.querySelector('.account-name-text').textContent=data.accountNumber;
+        if(e.accountName !== "empty") return userAcountPass=true;
+    };
+    const withdrawBtw=document.querySelector('.withdrawal-btw').addEventListener('click', ()=>{withdraw(userD);})
+    const withdraw=(e)=>{
+      const password=e.password;
+      const balance= e.balance;
+      const orderCount= e.orderCount;
+      //validate withdrawal
+      const withdrawAlert= document.querySelector('.withdraw-alart-text0')
+      withdrawAlert.textContent='';
+      const amountIn= document.querySelector('.amount-input').value.trim();
+      const passwordIn= document.querySelector('.password-input').value.trim();
+      const amountInText= document.querySelector('.withdrawal-input-text');
+      const passwordInText= document.querySelector('.password-input-text');
+      amountInText.textContent='Amount'; amountInText.style.color='gray';
+      passwordInText.textContent='Password'; passwordInText.style.color='gray';
+      if(amountIn === '') return amountInText.textContent='enter amount', amountInText.style.color='rgb(230, 69, 69)';
+      if(!Number(amountIn)) return amountInText.textContent='invalid withdraw amount', amountInText.style.color='rgb(230, 69, 69)';
+      if(Number(amountIn) < 2000) return amountInText.textContent='minimun withdrawal is 2000', amountInText.style.color='rgb(230, 69, 69)';
+      if(passwordIn === '') return passwordInText.textContent='enter password', passwordInText.style.color='rgb(230, 69, 69)';
+      if(passwordIn !== password) return passwordInText.textContent='wrong password', passwordInText.style.color='rgb(230, 69, 69)';
+      if((balance - Number(amountIn)) < 0) return withdrawAlert.textContent='Balance is to low!!';
+      if(!userAcountPass) return withdrawAlert.textContent='Wallet details can\'t be empty';
+      if(orderCount < 1) return withdrawAlert.textContent='Can\'t make withdraw user has no products bought';
+        const loadingAnimation = document.querySelector(
+          ".loading-animation-body"
+          );
+        loadingAnimation.style.display = "block";
+          makeWithdraw(amountIn, userD.accountName, userD.accountNumber, userD.bankName)
+    }
+    const makeWithdraw= async(am, acna, acnu, bn)=>{
+        const amounToWithdraw=am;
+        const accountName=acna;
+        const accountNumber=acnu;
+        const bankName=bn;
+        const userData = JSON.parse(localStorage.getItem("Wave_user"));
+        const userId= userData.userId;
+        const authorization= userData.authorization;
+        if(!userId)return;
+          try{
+            const url='/withdrawal/m/w';
+            const withdrawalDetails={
+                userId : userId,
+                amount :  amounToWithdraw,
+                type   :  "withdrawal",
+                accountName : accountName,
+                accountNumber : accountNumber,
+                bankName : bankName 
+              }
+            const data= await fetch(url,{
+              method: 'POST',
+              headers:{
+                'Authorization' : `Brear ${authorization}`,
+                'Content-Type' : 'application/json'
+              },
+              body: JSON.stringify(withdrawalDetails)
+            });
+            const responds= await data.text();
+            document.open();
+            document.write(responds);
+            document.close();
+          }catch(error){
+            console.log(error);
+          }
+    }
+  </script>
+</html>

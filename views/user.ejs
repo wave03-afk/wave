@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wave</title>
+    <link rel="stylesheet" href="/fonts/css/all.css" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="user-body">
+      <div class="user-about">
+        <div class="user-details-box">
+          <span class="user-i"><i class="fa fa-user-circle"></i></span>
+          <div class="user-info">
+            <h5 class="user-number"></h5>
+            <h5 class="user-code">invitation code: 6620172</h5>
+          </div>
+        </div>
+      </div>
+      <div class="balance-box">
+        <div class="balance-content">
+          <h5 class="balance-text">Available Balance</h5>
+          <span class="balance"
+            ><i class="fa fa-naira-sign b-i"></i>
+            <h5 id="balance">0.00</h5></span
+          >
+          <span class="current-incomes"
+            ><h5 class="current-income">Total income</h5>
+            <i class="fa fa-naira-sign b-i"></i>
+            <h5 class="current-income0">0.00</h5></span
+          >
+        </div>
+      </div>
+      <div class="user-futures-box">
+        <div class="user-futures-content">
+          <div class="customer-service customer-service-chat">
+            <i class="fa fa-message f-i"></i>
+            <h5 class="customer-service-text">Customer Service</h5>
+            <h5 class="customer-service0">></h5>
+          </div>
+          <div class="customer-service terms-use">
+            <i class="fa fa-book f-i"></i>
+            <h5 class="customer-service-text">Term of use</h5>
+            <h5 class="customer-service0">></h5>
+          </div>
+          <div class="customer-service coupon-text-box">
+            <i class="fa fa-gift f-i"></i>
+            <h5 class="customer-service-text">Coupon Code</h5>
+            <h5 class="customer-service0">></h5>
+          </div>
+          <div class="customer-service fqa-text">
+            <i class="fa fa-question-circle f-i"></i>
+            <h5 class="customer-service-text">FAQ</h5>
+            <h5 class="customer-service0">></h5>
+          </div>
+          <div class="customer-service">
+            <i class="fa fa-sign-out-alt f-i"></i>
+            <h5 class="customer-service-text sign-out">Sign out</h5>
+            <h5 class="customer-service0">></h5>
+          </div>
+        </div>
+      </div>
+      <div class="end-image">
+        <img class="end-image-in" src="/images/store.jpg" />
+      </div>
+      <div class="end-tool-box">
+        <div class="end-tool">
+          <div class="home-box">
+            <spna class="home-i-t" data-page="home"
+              ><i class="fa fa-home e-i"></i>
+              <h5 class="home-t e-t">Home</h5></spna
+            >
+          </div>
+          <div class="products-box">
+            <spna class="products-i-t" data-page="products"
+              ><i class="fa-solid fa-cube e-i"></i>
+              <h5 class="products-t e-t">Products</h5></spna
+            >
+          </div>
+          <div class="me-box">
+            <spna class="me-i-t" data-page="me"
+              ><i class="fa fa-user e-i"></i>
+              <h5 class="me-t e-t">Me</h5></spna
+            >
+          </div>
+        </div>
+      </div>
+      <div class="coupon-body">
+        <span class="coupon-content-box">
+          <span class="coupon-back-i-box">
+            <i class="fa fa-xmark"></i>
+          </span>
+          <h5 class="coupon-head-text">
+            if you have a coupon code, please apply it below.
+          </h5>
+          <input class="coupon-in" type="text" placeholder="coupon code" />
+          <h5 class="coupon-alert-text"></h5>
+          <button class="coupon-btw">Apply coupon</button>
+        </span>
+      </div>
+    </div>
+  </body>
+  <script>
+    document.querySelector('.customer-service-chat').addEventListener('click', ()=>{
+      window.open('https://t.me/Wave_inc', '_blank');
+    });
+    document.querySelector(".fa-user").style.color = "orange";
+    document.addEventListener("click", (e) => {
+      const target = e.target.closest("[data-page]");
+      if (target) {
+        switch (target.dataset.page) {
+          case "home":
+            window.location.replace("/home");
+            break;
+          case "products":
+            window.location.replace("/products");
+            break;
+          case "me":
+            window.location.replace("/user");
+            break;
+          default:
+            break;
+        }
+      }
+    });
+    const getUserData = async () => {
+      userData = JSON.parse(localStorage.getItem("Wave_user"));
+      const userId = userData.userId;
+      try {
+        const url = `user/${userId}/g/u/d`;
+        const user = await fetch(url, {
+          method: "GET",
+          headers: {
+            "Content-type": "aplication/json",
+          },
+        });
+        const responds = await user.json();
+        if (!responds) return console.log(responds);
+        const data = responds.responds;
+        updateUserDom(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getUserData();
+    //
+    const updateUserDom = async (e) => {
+      const data = e;
+      const amount = String(e.balance);
+      const phone = data.phone;
+      const phoneDisplay = (document.querySelector(".user-number").textContent =
+        phone);
+      const balance = (document.querySelector("#balance").textContent =
+        balanceUi(amount));
+      userData = JSON.parse(localStorage.getItem("Wave_user"));
+      const id = userData.userId;
+      const authorization = userData.authorization;
+      try {
+        const url = `/transaction/${id}/g/u/t`;
+        const data = await fetch(url, {
+          method: "GET",
+          headers: {
+            Authorization: `Bear ${authorization}`,
+            "Content-type": "application/json",
+          },
+        });
+        const responds = await data.json();
+        if (!responds) return;
+        const transactions = responds.transactions;
+        let incomeAmount = 0;
+        let count = 0;
+        for (const element of transactions) {
+          const transactionType = element.transactionData.type;
+          if (transactionType === "daily return") {
+            const userAmount = Number(element.transactionData.amount);
+            if (userAmount) {
+              const amount = userAmount;
+              incomeAmount = incomeAmount + amount;
+            } else {
+              const userAmount = element.transactionData.amount;
+              const amount = Number(userAmount.split(",").join(""));
+              incomeAmount = incomeAmount + amount;
+            }
+          }
+          count = count + 1;
+          if (count === transactions.length) {
+            const tempIncomeAmount = String(incomeAmount);
+            const income = balanceUi(tempIncomeAmount);
+            document.querySelector(".current-income0").textContent = income;
+          }
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    const balanceUi = (e) => {
+      const data = e.split("");
+      const dataHundredValue = data.length - 3;
+      const hundred = [];
+      if (dataHundredValue >= 1) {
+        for (let i = 0; i < data.length; i++) {
+          hundred.push(data[dataHundredValue + i]);
+        }
+      } else {
+        return data.join("");
+      }
+      const thousand = [];
+      const datathousand = dataHundredValue - 3;
+      if (datathousand >= 1) {
+        for (let i = datathousand; i < dataHundredValue; i++) {
+          thousand.push(data[i]);
+        }
+        const million = [];
+        for (let i = 0; i < datathousand; i++) {
+          million.push(data[i]);
+        }
+        const result = `${million.join("")},${thousand.join("")},${hundred.join(
+          ""
+        )}`;
+        return result;
+      } else {
+        const leftValue = [];
+        for (let i = 0; i < dataHundredValue; i++) {
+          leftValue.push(data[i]);
+        }
+        const result = `${leftValue.join("")},${hundred.join("")}`;
+        return result;
+      }
+    };
+    const signOutBtw = document
+      .querySelector(".sign-out")
+      .addEventListener("click", () => {
+        const url = "/";
+        window.location.replace(url);
+      });
+    //coupon code
+    const couponBtw = document
+      .querySelector(".coupon-text-box")
+      .addEventListener("click", () => {
+        couponDisplay = document.querySelector(".coupon-content-box");
+        couponDisplay.style.display = "flex";
+        const couponMassageAlert = document.querySelector(".coupon-alert-text");
+        couponMassageAlert.textContent = "";
+      });
+    // coupon back btw
+    const couponBackBtw = document
+      .querySelector(".fa-xmark")
+      .addEventListener("click", () => {
+        couponDisplay = document.querySelector(".coupon-content-box");
+        couponDisplay.style.display = "none";
+      });
+    //apply coupon code
+    const applyCoupon = async (e) => {
+      const userData = JSON.parse(localStorage.getItem("Wave_user"));
+      const userId = userData.userId;
+      const authorization = userData.authorization;
+      const couponCode = e;
+      if (!userId) return;
+      const data = {
+        userId: userId,
+        couponCode: couponCode,
+      };
+      try {
+        const url = "/coupon/validate";
+        const applyCouponCode = await fetch(url, {
+          method: "POST",
+          headers: {
+            Authorization: `Brear ${authorization}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+        const responds = await applyCouponCode.json();
+        const couponMassageAlert = document.querySelector(".coupon-alert-text");
+        if (responds.status !== 200)
+          return (
+            (couponMassageAlert.textContent = responds.massage),
+            (couponMassageAlert.style.color = "rgb(230, 69, 69)")
+          );
+        return (
+          (couponMassageAlert.textContent = responds.massage),
+          (couponMassageAlert.style.color = "green")
+        );
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    // apply coupon btw
+    const applyCouponBtw = document
+      .querySelector(".coupon-btw")
+      .addEventListener("click", () => {
+        const couponMassageAlert = document.querySelector(".coupon-alert-text");
+        couponMassageAlert.textContent = "";
+        const couponIn = document.querySelector(".coupon-in").value.trim();
+        if (couponIn === "")
+          return (
+            (couponMassageAlert.textContent = "enter coupon code"),
+            (couponMassageAlert.style.color = "rgb(230, 69, 69)")
+          );
+        applyCoupon(couponIn);
+      });
+    //FQA
+    const fqaBtw = document.querySelector(".fqa-text").addEventListener("click", () => {
+      const url = "/about/how/invest";
+      window.location.replace(url);
+    });
+    const tearmsBtw= document.querySelector('.terms-use').addEventListener('click', ()=>{
+      const url = "/about/terms";
+      window.location.replace(url);
+    });
+  </script>
+</html>

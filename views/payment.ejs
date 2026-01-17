@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wave</title>
+    <link rel="stylesheet" href="/fonts/css/all.css" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="payment-body">
+      <div class="payment-content-box">
+        <div class="loading-animation-body">
+          <div class="loading-animation-box">
+            <span></span><span></span><span></span><span></span><span></span><span></span>
+        </div>
+      </div>
+        <span class="amount-display-box">
+          <h5 class="amount-d-text"></h5>
+        </span>
+        <div class="p-d-content-body">
+          <span class="sub-head-p">
+            <h5 class="p-sub-h-t">Bank transfer</h5>
+            <h5 class="sub-sub-head-t">
+              Make transfer to the account details provided
+            </h5>
+          </span>
+          <span class="p-d-c-b">
+            <span class="acount-n-and-bank-n">
+              <span class="acount-n-b">
+                <h5 class="m-t">Account number</h5>
+                <h5 class="a-n-t">9034154937</h5>
+              </span>
+              <span class="bank-n-b">
+                <h5 class="m-t">Bank name</h5>
+                <h5 class="a-n-t">OPAY</h5>
+              </span>
+            </span>
+            <span class="acount-nA-and-refres-t">
+              <span class="acount-n-b">
+                <h5 class="m-t">Account name</h5>
+                <h5 class="a-n-t p-d-e-t e-d-p-t">Victory Nwanoruo</h5>
+              </span>
+              <span class="bank-n-b">
+                <h5 class="m-t">Account refresh</h5>
+                <h5 class="a-n-t a-n-t-m e-d-p-t">02:59</h5>
+              </span>
+            </span>
+          </span>
+          <span class="payment-confirm-and-reject-box">
+            <span class="payment-alert-i">
+              <i class="fa-solid fa-circle-info p-i-i"></i>
+              <h5 class="payment-alert-text">
+                Only confirm if you have made transfer
+              </h5>
+            </span>
+            <button class="confirm-payment"></button>
+            <button class="reject-payment">Cancel payment</button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    const amount = "<%=locals.amount%>";
+    //
+    const balanceUi = (e) => {
+      const data = e.split("");
+      const dataHundredValue = data.length - 3;
+      const hundred = [];
+      if (dataHundredValue >= 1) {
+        for (let i = 0; i < data.length; i++) {
+          hundred.push(data[dataHundredValue + i]);
+        }
+      } else {
+        return data.join("");
+      }
+      const thousand = [];
+      const datathousand = dataHundredValue - 3;
+      if (datathousand >= 1) {
+        for (let i = datathousand; i < dataHundredValue; i++) {
+          thousand.push(data[i]);
+        }
+        const million = [];
+        for (let i = 0; i < datathousand; i++) {
+          million.push(data[i]);
+        }
+        const result = `${million.join("")},${thousand.join("")},${hundred.join(
+          ""
+        )}`;
+        return result;
+      } else {
+        const leftValue = [];
+        for (let i = 0; i < dataHundredValue; i++) {
+          leftValue.push(data[i]);
+        }
+        const result = `${leftValue.join("")},${hundred.join("")}`;
+        return result;
+      }
+    };
+    //
+    const displayAmount = balanceUi(amount);
+    document.querySelector(
+      ".amount-d-text"
+    ).textContent = `\u20A6${displayAmount}`;
+    //
+    const min = 2;
+    const seconds = 59;
+    setTimeout(() => {
+      secondsCountDown();
+    }, 1000);
+    const secondsCountDown = () => {
+      let minT = min;
+      let secondsT = seconds;
+      const eachSecond = () => {
+        if (minT < 0) {
+          // test file remove before deploy
+           const loadingAnimation = document.querySelector(
+          ".loading-animation-body"
+          );
+        loadingAnimation.style.display = "block";
+          return rejectPayment(amount);
+        };
+        const timerDisplay = document.querySelector(".a-n-t-m");
+        timerDisplay.textContent = `0${minT}:${
+          secondsT >= 10 ? secondsT : "0" + secondsT
+        }`;
+        if (minT !== 0) {
+          setTimeout(() => {
+            counter();
+          }, 1000);
+        } else {
+          setTimeout(() => {
+            counter();
+          }, 1000);
+        }
+      };
+      eachSecond();
+      const counter = () => {
+        secondsT = secondsT - 1;
+        if (secondsT === 0) {
+          minT = minT - 1;
+          secondsT = 59;
+        }
+        eachSecond();
+      };
+    };
+    const paymentConfirmBtw = document.querySelector(".confirm-payment");
+    paymentConfirmBtw.textContent = `Confirm payment (\u20A6${displayAmount})`;
+    //
+    const confirmPayment = async (a) => {
+      const user = JSON.parse(localStorage.getItem("Wave_user"));
+      if (!user) return;
+      //loading animation
+      const userId = user.userId;
+      const authorization = user.authorization;
+      const type = "deposit";
+      const data = {
+        userId: userId,
+        amount: a,
+        type: type,
+        verified: "true",
+      };
+      try {
+        const url = "/payment/m/p";
+        const payment = await fetch(url, {
+          method: "POST",
+          headers: {
+            Authorization: `Token ${authorization}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+        const responds = await payment.text();
+        document.open();
+        document.write(responds);
+        document.close();
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    const rejectPayment = async (a) => {
+      const user = JSON.parse(localStorage.getItem("Wave_user"));
+      if (!user) return;
+      //loading animation
+      const userId = user.userId;
+      const authorization = user.authorization;
+      const type = "deposit";
+      const data = {
+        userId: userId,
+        amount: a,
+        type: type,
+        verified: "false",
+      };
+      try {
+        const url = "/payment/m/p";
+        const payment = await fetch(url, {
+          method: "POST",
+          headers: {
+            Authorization: `Token ${authorization}`,
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+        const responds = await payment.text();
+        document.open();
+        document.write(responds);
+        document.close();
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    //
+    paymentConfirmBtw.addEventListener("click", () => {
+      //test file remove before deploy
+       const loadingAnimation = document.querySelector(
+          ".loading-animation-body"
+        );
+      loadingAnimation.style.display = "block";
+      confirmPayment(amount);
+    });
+    const paymentRejectBtw = document
+      .querySelector(".reject-payment")
+      .addEventListener("click", () => {
+        //test file remove before deploy
+       const loadingAnimation = document.querySelector(
+          ".loading-animation-body"
+        );
+      loadingAnimation.style.display = "block";
+        rejectPayment(amount);
+      });
+  </script>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wave</title>
+    <base href="/" />
+    <link rel="stylesheet" href="/fonts/css/all.css" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="login-body">
+      <h1 class="login-head-text">Good Afternoon!</h1>
+      <h5 class="login-sub-head-text">Welcome to wave</h5>
+      <div class="login-input-box">
+        <span class="login-phone-in-box login-in-box">
+          <h5 class="login-in-text phone-n-t">Phone number</h5>
+          <span class="login-in-and-i-box">
+            <input
+              class="login-phone-in login-in"
+              placeholder="Whats your number"
+            />
+            <i class="fa fa-phone login-in-i"></i>
+          </span>
+        </span>
+        <span class="login-password-in-box login-in-box">
+          <h5 class="login-in-text password-t">Password</h5>
+          <span class="login-in-and-i-box">
+            <input
+              class="login-password-in login-in"
+              placeholder="Whats your password"
+            />
+            <i class="fa fa-lock login-in-i"></i>
+          </span>
+        </span>
+        <span class="reb-pass-box">
+          <input class="password-check" type="checkbox" />
+          <h5 class="password-check-text">Remember password</h5>
+        </span>
+        <h5 class="login-error-alert"></h5>
+        <button class="login-btw">Login</button>
+        <span class="registter-rederict">
+          <h5 class="registter-rederict-text">Don't have an account?</h5>
+          <a class="registter-rederict-link" href="/register"> Register </a>
+        </span>
+      </div>
+      <h5 class="socails-text">Contact Or Follow US</h5>
+      <div class="login-socials-body">
+        <span class="login-socials-box">
+          <i class="fa-brands fa-facebook s-brands-i"></i>
+          <i class="fa-brands fa-telegram s-brands-i"></i>
+          <i class="fa-brands fa-whatsapp s-brands-i"></i>
+        </span>
+      </div>
+      <h5 class="end-terms">
+        By continuing you confirm that you agree with all terms & condition
+      </h5>
+    </div>
+  </body>
+  <script>
+    //
+    document.querySelector('.fa-telegram').addEventListener('click', ()=>{
+      window.open('https://t.me/Wave_inc', '_blank');
+    });
+     document.querySelector('.fa-whatsapp').addEventListener('click', ()=>{
+      window.open('https://wa.me/2348066869429', '_blank');
+    });
+    //great user
+    (() => {
+      const timeToGreat = {
+        morning: "Good Morning!",
+        afternoon: "Good Afternoon",
+        evening: "Good Evening",
+      };
+      const dayHour = new Date().getHours();
+      const greetDisplay = document.querySelector(".login-head-text");
+      if (dayHour === 0 || dayHour < 12)
+        return (greetDisplay.textContent = timeToGreat.morning);
+      if (dayHour === 12 || dayHour < 16)
+        return (greetDisplay.textContent = timeToGreat.afternoon);
+      if (dayHour === 16 || dayHour <= 23)
+        return (greetDisplay.textContent = timeToGreat.evening);
+    })();
+    // get user input on login
+    const loginBtw = document
+      .querySelector(".login-btw")
+      .addEventListener("click", () => {
+        document.querySelector(".phone-n-t").style.color = "gray";
+        document.querySelector(".password-t").style.color = "gray";
+        document.querySelector(".login-error-alert").style.display = "none";
+        login();
+      });
+    const login = async () => {
+      const phone = document.querySelector(".login-phone-in").value.trim();
+      const passwordCheck = document
+        .querySelector(".login-password-in")
+        .value.trim();
+      if (phone === "" && passwordCheck === "")
+        return (
+          (document.querySelector(".phone-n-t").textContent =
+            "Phone number cant be empty"),
+          (document.querySelector(".phone-n-t").style.color =
+            "rgb(199, 42, 42)"),
+          (document.querySelector(".password-t").textContent =
+            "Password cant be empty"),
+          (document.querySelector(".password-t").style.color =
+            "rgb(199, 42, 42)")
+        );
+      if (phone === "")
+        return (
+          (document.querySelector(".phone-n-t").textContent =
+            "Phone number cant be empty"),
+          (document.querySelector(".phone-n-t").style.color =
+            "rgb(199, 42, 42)")
+        );
+      if (passwordCheck === "")
+        return (
+          (document.querySelector(".password-t").textContent =
+            "Password cant be empty"),
+          (document.querySelector(".password-t").style.color =
+            "rgb(199, 42, 42)")
+        );
+      const password = document.querySelector(".login-password-in").value;
+      //check if user exist
+      const userLoginDetails = {
+        phone: phone,
+        password: password,
+      };
+      try {
+        const data = await fetch("/login/validation", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userLoginDetails),
+        });
+        const responds = await data.json();
+        if (responds.status === 404)
+          return (
+            (document.querySelector(".login-error-alert").textContent =
+              responds.massage),
+            (document.querySelector(".login-error-alert").style.display =
+              "block")
+          );
+        const userId = responds.userId;
+        const authorization = responds.authorization;
+        const url= responds.url;
+        if(userId){
+        const user = "Wave_user";
+        const userData = {
+          userId: userId,
+          authorization: authorization,
+        };
+        localStorage.setItem(user, JSON.stringify(userData));
+        window.location.replace(url);
+      }else{
+        const user= "Wave_user";
+        const userData = {
+          authorization: authorization,
+        };
+        localStorage.setItem(user, JSON.stringify(userData));
+        window.location.replace(url);
+      }
+      } catch (error) {
+        console.log(error)
+      }
+    };
+  </script>
+</html>

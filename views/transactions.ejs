@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wave</title>
+    <base href="/" />
+    <link rel="stylesheet" href="/fonts/css/all.css" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="body-content-transaction">
+      <div class="t-back">
+        <div class="head-content-box">
+          <i class="fa fa-arrow-left t-back-i"></i>
+          <span class="head-text-box"
+            ><h5 class="head-text">Transactions Details</h5></span
+          >
+        </div>
+      </div>
+      <div class="transaction-type-box">
+        <span class="transaction-type-in t-type">income</span>
+        <span class="transaction-type-exp t-type">expense</span>
+      </div>
+      <div class="exp-body t-c-b"></div>
+      <div class="income-body t-c-b"></div>
+    </div>
+  </body>
+  <script>
+    //transaction back btw
+    const backBtw = document
+      .querySelector(".fa-arrow-left")
+      .addEventListener("click", () => {
+        const url = "/home";
+        window.location.replace(url);
+      });
+    document.querySelector(".exp-body").style.display = "none";
+    let transactionTypeSwicth = true;
+    // transaction control
+    const transactionIncomeBtw = document
+      .querySelector(".transaction-type-in")
+      .addEventListener("click", () => {
+        const income = document.querySelector(".transaction-type-in");
+        const expense = document.querySelector(".transaction-type-exp");
+        const incomeDisplay = document.querySelector(".income-body");
+        const expenseDisplay = document.querySelector(".exp-body");
+        if (!transactionTypeSwicth)
+          return (
+            (incomeDisplay.style.display = "flex"),
+            (income.style.backgroundColor = "green"),
+            (income.style.color = "white"),
+            (expenseDisplay.style.display = "none"),
+            (expense.style.backgroundColor = "rgb(231, 228, 228)"),
+            (expense.style.color = "black"),
+            (transactionTypeSwicth = true)
+          );
+      });
+    const transactionExpenseBtw = document
+      .querySelector(".transaction-type-exp")
+      .addEventListener("click", () => {
+        const expense = document.querySelector(".transaction-type-exp");
+        const income = document.querySelector(".transaction-type-in");
+        const incomeDisplay = document.querySelector(".income-body");
+        const expenseDisplay = document.querySelector(".exp-body");
+        if (transactionTypeSwicth)
+          return (
+            (expenseDisplay.style.display = "flex"),
+            (expense.style.backgroundColor = "green"),
+            (expense.style.color = "white"),
+            (incomeDisplay.style.display = "none"),
+            (income.style.backgroundColor = "rgb(231, 228, 228)"),
+            (income.style.color = "black"),
+            (transactionTypeSwicth = false)
+          );
+      });
+    //get transactions
+    const userData = JSON.parse(localStorage.getItem("Wave_user"));
+    const userId = userData.userId;
+    const authorization = userData.authorization;
+
+    //income-body
+    const getTransactions = async (id, auth) => {
+      try {
+        const url = `/transaction/${id}/g/u/t`;
+        const data = await fetch(url, {
+          method: "GET",
+          headers: {
+            Authorization: `Bear ${authorization}`,
+            "Content-type": "application/json",
+          },
+        });
+        const responds = await data.json();
+        if (!responds) return;
+        return renderTransactions(responds);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    getTransactions(userId, authorization);
+    //render transactions
+    const income = (e) => {
+      const data = e;
+      const grandParent = document.querySelector(".income-body");
+      // creat element
+      const transactionBox = document.createElement("span");
+      transactionBox.className = "income-box t-c-bx";
+      //
+      const iconBox = document.createElement("span");
+      iconBox.className = "income-i-box t-i-b";
+      const nairaIcon = document.createElement("i");
+      nairaIcon.className = "fa-solid fa-naira-sign";
+      iconBox.append(nairaIcon);
+      //
+      const amountBox = document.createElement("span");
+      amountBox.className = "income-am-box t-a-b";
+      const amountText = document.createElement("h5");
+      amountText.className = "income-am-text t-a-t";
+      amountText.textContent = `+${data.transactionData.amount}`;
+      amountBox.append(amountText);
+      //
+      const transactionTypeBox = document.createElement("span");
+      transactionTypeBox.className = "income-data-type-box t-d-t-t";
+      //
+      const transactionDate = document.createElement("h5");
+      transactionDate.className = "income-date-time t-d-t";
+      transactionDate.textContent = `${data.transactionData.date}`;
+      //
+      const transactionStatus = document.createElement("h5");
+      transactionStatus.className = "income-income-status t-t-t";
+      transactionStatus.textContent = `${data.transactionData.status}`;
+      //
+      const transactionTypeText = document.createElement("h5");
+      transactionTypeText.className = "income-income-type t-t-t";
+      transactionTypeText.textContent = `${data.transactionData.type}`;
+      transactionTypeBox.append(
+        transactionDate,
+        transactionStatus,
+        transactionTypeText
+      );
+      //
+      transactionBox.append(iconBox, amountBox, transactionTypeBox);
+      grandParent.appendChild(transactionBox);
+    };
+    const expense = (e) => {
+      const data = e;
+      const grandParent = document.querySelector(".exp-body");
+      // creat element
+      const transactionBox = document.createElement("span");
+      transactionBox.className = "exp-box t-c-bx";
+      //
+      const iconBox = document.createElement("span");
+      iconBox.className = "exp-i-box t-i-b";
+      const nairaIcon = document.createElement("i");
+      nairaIcon.className = "fa-solid fa-naira-sign";
+      iconBox.append(nairaIcon);
+      //
+      const amountBox = document.createElement("span");
+      amountBox.className = "exp-am-box t-a-b";
+      const amountText = document.createElement("h5");
+      amountText.className = "exp-am-text t-a-t";
+      amountText.textContent = `-${data.transactionData.amount}`;
+      amountBox.append(amountText);
+      //
+      const transactionTypeBox = document.createElement("span");
+      transactionTypeBox.className = "exp-data-type-box t-d-t-t";
+      //
+      const transactionDate = document.createElement("h5");
+      transactionDate.className = "exp-date-time t-d-t";
+      transactionDate.textContent = `${data.transactionData.date}`;
+      //
+      const transactionStatus = document.createElement("h5");
+      transactionStatus.className = "exp-status t-t-t";
+      transactionStatus.textContent = `${data.transactionData.status}`;
+      //
+      const transactionTypeText = document.createElement("h5");
+      transactionTypeText.className = "exp-exp-type t-t-t";
+      transactionTypeText.textContent = `${data.transactionData.type}`;
+      transactionTypeBox.append(
+        transactionDate,
+        transactionStatus,
+        transactionTypeText
+      );
+      //
+      transactionBox.append(iconBox, amountBox, transactionTypeBox);
+      grandParent.appendChild(transactionBox);
+    };
+    function renderTransactions(e) {
+      const data = e.transactions;
+      data.forEach((element) => {
+        const transaction = element;
+        const transactionType = transaction.transactionData.type;
+        if(transactionType === "withdrawal"){
+            expense(transaction);
+        }
+        if (transactionType === "product order") {
+          expense(transaction);
+        }  
+        if(transactionType === "Welcome Bonus" || transactionType === "deposit" || transactionType === "daily return" || transactionType === "coupon bonus"){
+          income(transaction);
+        }
+    })
+    }
+  </script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave</title>
+    <link rel="stylesheet" href="/fonts/css/all.css" />
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+    <div class="order-succesful-body">
+        <div class="order-content-box">
+        <span class="order-img-box">
+            <img class="order-img" src="/images/confirm.jpg">
+        </span>
+        <span class="order-head-text-box">
+            <h5 class="order-head-text">
+                Order Confirmed !
+            </h5>
+        </span> 
+        <span class="order-btw-box">
+            <button class="order-btw">Continue</button>
+        </span>
+        </div>
+    </div>
+</body>
+<script>
+    const continueBtw= document.querySelector('.order-btw').addEventListener('click', ()=>{
+        const url='/products';
+        window.location.replace(url);
+    });
+</script>
+</html>

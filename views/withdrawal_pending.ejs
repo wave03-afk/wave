@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave</title>
+    <link rel="stylesheet" href="/fonts/css/all.css" />
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+    <div class="payment-succesful-body">
+        <div class="payment-head-box">
+        <span class="payment-img-box">
+            <img class="payment-img" src="/images/pending.jpg">
+        </span>
+        <span class="payment-head-text-box">
+            <h5 class="payment-head-text">
+                Withdraw pending !
+            </h5>
+        </span> 
+        <span class="payment-pending-alert-box">
+            <h5 class="payment-pending-alert-text">
+                enjoy fast & smooth withdraws 
+            </h5>
+        </span>
+        <span class="payment-btw-box">
+            <button class="payment-btw">Continue</button>
+        </span>
+        </div>
+    </div>
+</body>
+<script>
+    const continueBtw= document.querySelector('.payment-btw').addEventListener('click', ()=>{
+        const url='/home';
+        window.location.replace(url);
+    });
+</script>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wave</title>
+    <link rel="stylesheet" href="/fonts/css/all.css" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="ragister-body">
+      <div class="registration_body">
+        <span class="registration-content-box">
+            <h5 class="registration-text">Registration Succcesful</h5>
+        </span>
+    </div>
+      <h1 class="register-head-text">Register</h1>
+      <h1 class="register-sub-head-text">
+        Sign up to get &#8358;300 welcome bonus
+      </h1>
+    </div>
+    <div class="register-input-body">
+      <span class="register-in-box">
+        <h5 class="register-in-text name-t">Name</h5>
+        <span class="register-in-and-i-box">
+          <input
+            class="register-in name"
+            placeholder="Whats your name"
+            type="text"
+          />
+          <i class="fa fa-user register-in-i"></i>
+        </span>
+      </span>
+      <span class="register-in-box">
+        <h5 class="register-in-text phone-t">Phone number</h5>
+        <span class="register-in-and-i-box">
+          <input
+            class="register-in phone"
+            placeholder="Whats your number"
+            type="text"
+          />
+          <i class="fa fa-phone register-in-i"></i>
+        </span>
+      </span>
+      <span class="register-in-box">
+        <h5 class="register-in-text password-t">Password</h5>
+        <span class="register-in-and-i-box">
+          <input
+            class="register-in password"
+            placeholder="Whats your password"
+            type="text"
+          />
+          <i class="fa fa-lock register-in-i"></i>
+        </span>
+      </span>
+      <span class="register-in-box">
+        <h5 class="register-in-text cpassword-t">Confirm password</h5>
+        <span class="register-in-and-i-box">
+          <input
+            class="register-in cpassword"
+            placeholder="Whats your password"
+            type="text"
+          />
+          <i class="fa fa-lock register-in-i"></i>
+        </span>
+      </span>
+      <button class="register-btw">Continus</button>
+      <span class="login-rederict">
+          <h5 class="login-rederict-text">Already have an account?</h5>
+          <a class="login-rederict-link" href="/"> Login </a>
+      </span>
+      <h5 class="register-sig-up-massage"></h5>
+      <h5 class="end-terms">
+        By continuing you confirm that you agree with all terms & condition
+      </h5>
+    </div>
+     <h5 class="socails-text">Contact Or Follow US</h5>
+    <div class="login-socials-body">
+      <span class="login-socials-box">
+        <i class="fa-brands fa-facebook s-brands-i"></i>
+        <i class="fa-brands fa-telegram s-brands-i"></i>
+        <i class="fa-brands fa-whatsapp s-brands-i"></i>
+      </span>
+    </div>
+  </body>
+  <script>
+    document.querySelector('.fa-telegram').addEventListener('click', ()=>{
+      window.open('https://t.me/Wave_inc', '_blank');
+    });
+     document.querySelector('.fa-whatsapp').addEventListener('click', ()=>{
+      window.open('https://wa.me/2348066869429', '_blank');
+    });
+    //get validate user input
+    const registerBtw=document.querySelector('.register-btw').addEventListener('click', ()=>{
+        document.querySelector('.name-t').style.color='gray';
+        document.querySelector('.phone-t').style.color='gray';
+        document.querySelector('.password-t').style.color='gray';
+        document.querySelector('.cpassword-t').style.color='gray';
+        document.querySelector('.name-t').textContent='Name';
+        document.querySelector('.phone-t').textContent='Phone number';
+        document.querySelector('.password-t').textContent='Password';
+        document.querySelector('.cpassword-t').textContent='Confirm password';
+        registrationAlertMessage=document.querySelector('.register-sig-up-massage').textContent='';
+        register()
+    })
+    const register= async()=>{
+        const name=document.querySelector('.name').value.trim();
+        const phone=document.querySelector('.phone').value.trim();
+        const password=document.querySelector('.password').value.trim();
+        const cpassword=document.querySelector('.cpassword').value.trim();
+        if(name==='') return document.querySelector('.name-t').textContent='Name can\'t be empty', document.querySelector('.name-t').style.color='rgb(199, 42, 42)';
+        if(phone==='') return document.querySelector('.phone-t').textContent='Phone number can\'t be empty', document.querySelector('.phone-t').style.color='rgb(199, 42, 42)';
+        if(password==='') return document.querySelector('.password-t').textContent='Password can\'t be empty', document.querySelector('.password-t').style.color='rgb(199, 42, 42)';
+        if(cpassword==='') return document.querySelector('.cpassword-t').textContent='Password can\'t be empty', document.querySelector('.cpassword-t').style.color='rgb(199, 42, 42)';
+        if(password!==cpassword) return document.querySelector('.cpassword-t').textContent='Password does not macth', document.querySelector('.cpassword-t').style.color='rgb(199, 42, 42)', document.querySelector('.password-t').textContent='Password does not macth', document.querySelector('.password-t').style.color='rgb(199, 42, 42)';
+        //validate number
+        if(!Number(phone)) return document.querySelector('.phone-t').textContent='Invalide phone number', document.querySelector('.phone-t').style.color='rgb(199, 42, 42)';
+        const validPhone=phone.split('');
+        if(validPhone.length < 11 || validPhone.length > 11) return document.querySelector('.phone-t').textContent='Invalide phone number', document.querySelector('.phone-t').style.color='rgb(199, 42, 42)';
+        const mainPassword=document.querySelector('.password').value;
+        try{
+            const userData= {
+                name : name,
+                phone :  phone,
+                password   :  mainPassword
+                }
+            const url='/register/user'
+            const responds= await fetch(url,{
+                method: "POST",
+                headers: {
+                "Content-Type": "application/json",
+                },
+                body: JSON.stringify(userData)
+            });
+            const data= await responds.json();
+            const display= document.querySelector('.registration-content-box');
+            const registrationAlertMessage=document.querySelector('.registration-text');
+            if(data.status!==201) return display.style.display='block', registrationAlertMessage.textContent=data.massage, registrationAlertMessage.style.color='rgb(199, 42, 42)', setTimeout(()=>{ display.style.display='none';},2500);
+            display.style.display='block',
+            registrationAlertMessage.textContent=data.massage;
+            registrationAlertMessage.style.color='green';
+            const loginDelay= await setTimeout(()=>{loginRedirect();},2000)
+        }catch(error){
+
+        }
+    };
+    const loginRedirect=()=>{
+        const url='/';
+        window.location.replace(url);
+    }
+  </script>
+</html>

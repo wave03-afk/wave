@@ -1,0 +1,145 @@
+
+### get user transactions
+GET  http://localhost:5000/user/6963d6a0e8a701887555c630/g/u/d
+Authorization: Token 8ed846247e0dd086bcda60f6ebe25ab912c101f44c31dc0f852dfc8cadbb0d19b473045e8aa35210035cdfb12b434ee5cd9142615b0acbadcc4e8541cd292951
+
+
+### user make payment
+POST http://localhost:5000/payment/m/p
+header: http://localhost:5000/payment/m/p
+Authorization: Token '8ed846247e0dd086bcda60f6ebe25ab912c101f44c31dc0f852dfc8cadbb0d19b473045e8aa35210035cdfb12b434ee5cd9142615b0acbadcc4e8541cd292951'
+Content-Type: application/json
+Cookie: true
+//if cookie === false payment is altomaticaly rejected
+
+{
+    "userId" : "6962bf0c325855c2a08c2231",
+    "amount" :  "2000",
+    "type"   :  "deposit"
+}
+### get all user payment transaction
+GET  http://localhost:5000/admin/p
+Authorization: Token 00a342face4404e6ebf6abe1ecbc8a8aedc03e74b206cb80abbd818b7877caf39762dcf00faa30fab2323e856b20806c7c087f781fb2f435824cce235535ec52
+
+### get all user withdrawal transactions
+GET  http://localhost:5000/admin/w
+Authorization: Token 00a342face4404e6ebf6abe1ecbc8a8aedc03e74b206cb80abbd818b7877caf39762dcf00faa30fab2323e856b20806c7c087f781fb2f435824cce235535ec52
+
+
+### validate user payment
+PATCH   http://localhost:5000/admin/p/up/p
+header: http://localhost:5000/admin/up/p
+Authorization: Token 00a342face4404e6ebf6abe1ecbc8a8aedc03e74b206cb80abbd818b7877caf39762dcf00faa30fab2323e856b20806c7c087f781fb2f435824cce235535ec52
+Content-Type: application/json
+
+{
+    "userId" : "6963d6a0e8a701887555c630",
+    "amount" :  "30000",
+    "status": "successful",
+    "transactionId"   :  "kj7r6komk"
+}
+
+### validate user withdrawal
+PATCH   http://localhost:5000/admin/w/up/w
+header: http://localhost:5000/admin/up/w
+Authorization: Token 00a342face4404e6ebf6abe1ecbc8a8aedc03e74b206cb80abbd818b7877caf39762dcf00faa30fab2323e856b20806c7c087f781fb2f435824cce235535ec52
+Content-Type: application/json
+
+{
+    "userId" : "6963d6a0e8a701887555c630",
+    "amount" :  "39950",
+    "status": "successful",
+    "transactionId"   :  "cwq71jzpd"
+}
+
+
+### create user
+POST http://localhost:5000/register/user
+header: http://localhost:5000/register/user
+Content-Type: application/json
+
+{
+    "name" : "victory",
+    "phone" :  "12222222223",
+    "password"   :  "8694299"
+}
+### get user infor
+GET  http://localhost:5000/user/6963d6a0e8a701887555c630/g/u/d
+Authorization: Token '8ed846247e0dd086bcda60f6ebe25ab912c101f44c31dc0f852dfc8cadbb0d19b473045e8aa35210035cdfb12b434ee5cd9142615b0acbadcc4e8541cd292951'
+### make product order
+POST http://localhost:5000/products/p/o/
+header: http://localhost:5000/products/p/o/
+Authorization: Token '8ed846247e0dd086bcda60f6ebe25ab912c101f44c31dc0f852dfc8cadbb0d19b473045e8aa35210035cdfb12b434ee5cd9142615b0acbadcc4e8541cd292951'
+Content-Type: application/json
+
+{
+  "itemName": "grean ray plus",
+  "itemPrice": 100,
+  "itemReturnAmount": "100",
+  "userId" : "695eed41fa98e2bdabf24d11",
+  "itemStokeNumber": 3,
+  "itemReturnTimePeriod" : 10
+}
+
+###test space
+GET  http://localhost:5000/products/test
+Authorization: Token '8ed846247e0dd086bcda60f6ebe25ab912c101f44c31dc0f852dfc8cadbb0d19b473045e8aa35210035cdfb12b434ee5cd9142615b0acbadcc4e8541cd292951'
+
+### daily return
+GET  http://localhost:5000/pnl/dailyReturn
+Authorization: Token '8ed846247e0dd086bcda60f6ebe25ab912c101f44c31dc0f852dfc8cadbb0d19b473045e8aa35210035cdfb12b434ee5cd9142615b0acbadcc4e8541cd292951'
+
+### login
+POST http://localhost:5000/login/validation
+header: http://localhost:5000
+Content-Type: application/json
+
+{
+    "phone" :  "07066869429",
+    "password"   :  "8694299"
+}
+
+### get all user count admin
+GET http://localhost:5000/admin/user/g/a/u/c
+Authorization: Token 00a342face4404e6ebf6abe1ecbc8a8aedc03e74b206cb80abbd818b7877caf39762dcf00faa30fab2323e856b20806c7c087f781fb2f435824cce235535ec52
+
+### make withdrawal
+POST http://localhost:5000/withdrawal/m/w
+header: http://localhost:5000/withdrawal/m/w
+Authorization: Token '8ed846247e0dd086bcda60f6ebe25ab912c101f44c31dc0f852dfc8cadbb0d19b473045e8aa35210035cdfb12b434ee5cd9142615b0acbadcc4e8541cd292951'
+Content-Type: application/json
+Cookie: true
+
+{
+    "userId" : "695ffbc263d5d467e3a5b936",
+    "amount" :  "200",
+    "type"   :  "withdraw",
+    "accountName" : "victory nwanoruo",
+    "accountNumber" : "9034154937",
+    "bankName" : "Opay" 
+}
+
+### get coupon code
+POST    http://localhost:5000/coupon/validate
+header: http://localhost:5000/coupon/validate
+Authorization: Token 8ed846247e0dd086bcda60f6ebe25ab912c101f44c31dc0f852dfc8cadbb0d19b473045e8aa35210035cdfb12b434ee5cd9142615b0acbadcc4e8541cd292951
+Content-Type: application/json
+
+{
+    "userId" : "695eed41fa98e2bdabf24d11",
+    "couponCode": "90004488"
+}
+
+### create coupon bonus
+POST    http://localhost:5000/admin/cupn/up
+header: http://localhost:5000/admin/cupn/up
+Authorization: Token 00a342face4404e6ebf6abe1ecbc8a8aedc03e74b206cb80abbd818b7877caf39762dcf00faa30fab2323e856b20806c7c087f781fb2f435824cce235535ec52
+Content-Type: application/json
+
+{
+    "userId" : "695eed41fa98e2bdabf24d11",
+    "couponAmount" :  "200 100 50",
+    "couponCode": "90004488",
+    "couponActiveDate"   :  "08/02/2026"
+}
+// done with most off my api's

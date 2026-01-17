@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave</title>
+    <link rel="stylesheet" href="/fonts/css/all.css" />
+    <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+    <div class="payment-rejectd-body">
+        <div class="payment-rejectd-head-box">
+        <span class="payment-rejectd-img-box">
+            <img class="payment-rejectd-img" src="/images/rejected.jpg">
+        </span>
+        <span class="payment-rejectd-head-text-box">
+            <h5 class="payment-rejectd-head-text">
+                Payment rejected !
+            </h5>
+        </span> 
+        <span class="payment-rejectd-alert-box">
+            <h5 class="payment-rejectd-alert-text">
+                Payment was not Confirmed 
+            </h5>
+        </span>
+        <span class="payment-rejectd-btw-box">
+            <button class="payment-rejectd-btw">Continue</button>
+        </span>
+        </div>
+    </div>
+</body>
+<script>
+    const continueBtw= document.querySelector('.payment-rejectd-btw').addEventListener('click', ()=>{
+        const url='/home';
+        window.location.replace(url);
+    });
+</script>
+</html>

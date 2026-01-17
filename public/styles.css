@@ -1,0 +1,2074 @@
+body {
+  background-color: rgb(252, 243, 243);
+}
+* {
+  margin: 0;
+}
+.head-box {
+  margin: 0;
+  background-color: white;
+  margin-bottom: 10px;
+}
+.head {
+  margin: 0;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-left: 15px;
+  font-size: 21px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.head-img {
+  display: flex;
+  justify-content: center;
+}
+.head-img-in {
+  height: 150px;
+  width: 90%;
+  border-radius: 10px;
+}
+.withdraw-alart-box {
+  margin-top: 10px;
+  width: 100%;
+  height: 25px;
+  background-color: white;
+  display: flex;
+  overflow: hidden;
+}
+.fa-fw {
+  margin-left: 5px;
+  margin-right: 2px;
+}
+.fa-bullhorn {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 19px;
+}
+.shake-horn{
+  display: none;
+}
+.withdraw-alart-text-box {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  height: 20px;
+}
+#withdraw-alart-text {
+  margin-right: 3px;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  font-size: 17px;
+  font-weight: 500;
+}
+.tools-box {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.tools-content {
+  display: grid;
+  grid-template-columns: 95px 95px 95px;
+  grid-template-rows: 80px 80px;
+  gap: 15px;
+  text-align: center;
+}
+.wallet-box {
+  display: flex;
+  flex-direction: column;
+}
+.wallet-i {
+  display: inline-block;
+  background-color: orange;
+  padding: 10%;
+  border-radius: 100%;
+}
+.fa-wallet {
+  font-size: 25px;
+}
+.recharge-box {
+  display: flex;
+  flex-direction: column;
+}
+.recharge-i {
+  display: inline-block;
+  background-color: orange;
+  padding: 10px;
+  border-radius: 100%;
+}
+.fa-piggy-bank {
+  font-size: 25px;
+}
+.withdraw-box {
+  display: flex;
+  flex-direction: column;
+}
+.withdraw-i {
+  display: inline-block;
+  background-color: orange;
+  padding: 10px;
+  border-radius: 100%;
+}
+.fa-hand-holding-dollar {
+  font-size: 25px;
+}
+.team-box {
+  display: flex;
+  flex-direction: column;
+}
+.team-i {
+  display: inline-block;
+  background-color: orange;
+  padding: 10px;
+  border-radius: 100%;
+}
+.fa-users {
+  font-size: 25px;
+}
+.invite-box {
+  display: flex;
+  flex-direction: column;
+}
+.invite-i {
+  display: inline-block;
+  background-color: orange;
+  padding: 10px;
+  border-radius: 100%;
+}
+.fa-paper-plane {
+  font-size: 25px;
+}
+.transaction-box {
+  display: flex;
+  flex-direction: column;
+}
+.transaction-i {
+  display: inline-block;
+  background-color: orange;
+  padding: 10px;
+  border-radius: 100%;
+}
+.fa-receipt {
+  font-size: 25px;
+}
+.tool-text {
+  margin: 0;
+  font-size: 18px;
+}
+.information-box {
+  margin-top: 5px;
+  display: flex;
+}
+.information-i {
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 2px;
+}
+.h-i-i {
+  font-size: 19px;
+  color: rgb(253, 167, 8);
+}
+.information-text {
+  font-size: 18px;
+}
+.info-box {
+  display: flex;
+  flex-direction: column;
+}
+.about-box {
+  background-color: white;
+  display: flex;
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border-radius: 10px;
+}
+.about-text {
+  margin: 0;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+.about-head {
+  margin: 0;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: auto;
+}
+.about-date {
+  margin: 0;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  font-size: 16px;
+  color: gray;
+}
+.about-image-box {
+  display: inline-block;
+  margin-right: 10px;
+}
+.about-img {
+  padding-top: 5px;
+  padding-bottom: 3px;
+  height: 120px;
+  width: 180px;
+}
+.about-invest-box {
+  margin-bottom: 50px;
+}
+.end-tool {
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  display: flex;
+  bottom: 0;
+}
+.home-box {
+  margin-right: auto;
+  margin-left: 20px;
+  text-align: center;
+}
+.products-box {
+  margin-right: auto;
+  text-align: center;
+}
+.products-i-t {
+  margin-right: auto;
+}
+.me-box {
+  text-align: center;
+  margin-right: 20px;
+}
+.e-i {
+  font-size: 30px;
+  color: gray;
+}
+.e-t {
+  font-size: 18px;
+  font-weight: 500;
+  color: gray;
+}
+/*home body end*/
+/*products body start*/
+.products-head-text {
+  background-color: white;
+}
+#products-head-text {
+  margin: 0;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-left: 15px;
+  font-size: 23px;
+}
+.products-box0 {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.products-box00 {
+  background-color: white;
+  border-radius: 7px;
+}
+.products-img0 {
+  width: 150px;
+  margin: 7px;
+}
+.product-head-text {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+.product-head-text0 {
+  margin-left: 7px;
+  margin-right: 7px;
+  font-size: 23px;
+}
+.cycle {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 550;
+  margin-left: 7px;
+  margin-right: 2px;
+}
+.cycle0 {
+  display: inline-block;
+  color: red;
+  font-size: 15px;
+  font-weight: 550;
+}
+.daily-pnl {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 550;
+  margin-left: 7px;
+  margin-right: 2px;
+}
+.daily-pnl0 {
+  display: inline-block;
+  color: red;
+  font-size: 15px;
+  font-weight: 550;
+}
+.total-income {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 550;
+  margin-left: 7px;
+}
+.total-income0 {
+  display: inline-block;
+  color: red;
+  font-size: 15px;
+  font-weight: 550;
+}
+.buy-btw {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+}
+.buy {
+  width: 150px;
+  height: 40px;
+  border-radius: 25px;
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(230, 230, 59);
+  border: 1px solid;
+  border-color: rgb(230, 230, 59);
+}
+.p-end {
+  margin-bottom: 45px;
+}
+
+/**products page end***/
+/**user page start**/
+.user-about {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.user-details-box {
+  display: flex;
+  background-color: white;
+  height: 100px;
+  width: 90%;
+  border-radius: 7px;
+}
+.user-i {
+  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fa-user-circle {
+  font-size: 80px;
+  margin-left: 20px;
+}
+.user-info{
+    display: flex;
+    flex-direction: column;
+}
+.user-number{
+    margin-top: auto;
+    font-size: 18px;
+}
+.user-code{
+    font-size: 18px;
+    font-weight: 500;
+    color: gray;
+    margin-bottom: auto;
+}
+.balance-box {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+}
+.balance-content {
+  width: 90%;
+  height: 90px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(250, 191, 82);
+}
+.balance-text {
+  margin: 0;
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 17px;
+  font-weight: 400;
+}
+.b-i {
+  margin-left: 10px;
+  font-size: 18px;
+}
+#balance {
+  margin: 0;
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 18px;
+}
+.current-incomes {
+  display: flex;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.current-income {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 400;
+}
+.fa-naira-sign {
+  font-size: 17px;
+}
+.current-income0 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 400;
+}
+.user-futures-box {
+  display: flex;
+  justify-content: center;
+}
+.user-futures-content {
+  width: 90%;
+  margin-top: 15px;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: white;
+}
+.customer-service {
+  display: flex;
+}
+.f-i {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+  margin-right: 5px;
+  font-size: 17px;
+  color: rgb(253, 168, 10);
+}
+.customer-service-text {
+  margin: 0;
+  margin-top: 10px;
+  font-size: 19px;
+  font-weight: 400;
+  margin-right: auto;
+}
+.customer-service0 {
+  margin: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 19px;
+  margin-right: 20px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+.end-image {
+  margin-top: 45px;
+  display: flex;
+  justify-content: center;
+}
+.end-image-in {
+  width: 90%;
+  height: 150px;
+  border-radius: 10px;
+}
+/* user page- end */
+/*transactions page*/
+.head-content-box{
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.t-back-i{
+  margin-left: 10px;
+  font-size: 18px;
+}
+.head-text-box{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-right: 15px;
+}
+.head-text{
+  font-size: clamp(14px, 3rem, 17px);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.transaction-type-box{
+  display: flex;
+  margin-bottom: 7px;
+}
+.t-type{
+  width: 50%;
+  background-color: rgb(231, 228, 228);
+  text-align: center;
+  font-size: clamp(13px, 2.5rem, 17px);
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.transaction-type-in{
+  background-color: green;
+  color: white;
+}
+.exp-body{
+  transition: 500ms ease-in;
+}
+.income-body{
+  transition: 500ms ease-in;
+}
+.t-c-b{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.t-c-bx{
+  display: flex;
+  width: 100%;
+  height: 50px;
+  background-color: rgb(248, 245, 245);
+  align-items: center;
+}
+.t-i-b{
+  background-color: yellow;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2px;
+  padding-right: 2px;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+.t-a-b{
+  margin-right: auto;
+}
+.t-a-t{
+  margin: 0;
+  margin-left: 15px;
+  font-size: 17px;
+}
+.t-d-t-t{
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+}
+.t-d-t{
+  font-size: 16px;
+}
+.t-t-t{
+  font-size: 16px;
+}
+.exp-am-text{
+  color: red;
+}
+/*income*/
+.income-am-text{
+  color: green;
+}
+/*withdrawal*/
+.withdrawal-back{
+  margin-top: 20px;
+}
+.Balance-box{
+  width: 100%;
+  height: 80px;
+  background-color: rgb(250, 191, 82);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.balance-text-i{
+  display: flex;
+}
+.Balance-text{
+  font-size: clamp(35px, 4rem, 38px);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.b-n-i{
+  margin-top: 10px;
+}
+.withdrawal-fee-box{
+  display: block;
+  border: 1px solid;
+  border-radius: 17px;
+}
+.withdrawal-fee-text{
+  font-size: clamp(15px, 2rem, 16px);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 3px;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+.withdrawal-back-content-box{
+  display: flex;
+  margin-top: 10px;
+}
+.w-b-i{
+  margin-left: 10px;
+  font-size: 18px;
+}
+.withdraw-head-text-box{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-right: 10px;
+}
+.withdraw-head-text{
+  font-size: clamp(14px, 3rem, 17px);
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: -15px;
+}
+.withdrawal-terms{
+  margin-top: 50px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-left: 20px;
+}
+.daily-withdrawal{
+  font-size: clamp(16px, 2rem, 17px);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.min-max{
+  font-size: clamp(14px, 1.5rem, 15px);
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+}
+.withdraw-alart-text0{
+  margin-left: 20px;
+  font-size: clamp(15px, 1.7rem, 16px);
+  color: rgb(230, 69, 69);
+}
+.withdrawal-input-content-box{
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.in-head-text{
+  font-size: clamp(14px, 1.5rem, 15px);
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+}
+.a-p-in{
+  width: 100%;
+  height: 30px;
+  border: 1px solid;
+}
+.amount-input{
+  margin-bottom: 7px;
+}
+.withdrawal-btw{
+  margin-top: 20px;
+  width: 100%;
+  font-size: 16px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  color: white;
+  background-color: rgb(107, 107, 235);
+  border: 1px rgb(107, 107, 235);
+}
+.account-info{
+  width: 90%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 40px;
+  margin-left: 20px;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  background-color: rgb(241, 233, 233);
+  border-bottom-right-radius: 45%;
+  border-top-right-radius: 45%;
+}
+.account-info-head-text{
+  margin-bottom: 10px;
+  margin-left: 10px;
+  font-size: clamp(16px, 2rem, 17px);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.a-i-b{
+  display: flex;
+  gap: 15px;
+  margin-left: 10px;
+}
+.a-i-t{
+  font-size: clamp(15px, 1.7rem, 16px);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.a-i-m-t{
+  color: gray;
+}
+.w-in-b{
+  display: flex;
+}
+.a-i-n-i{
+  position: absolute;
+  padding: 8px;
+  margin-left: 80%;
+  color: gray;
+}
+/*login page*/
+.login-head-text{
+  margin: 0;
+  font-size: clamp(28px, 3rem, 20px);
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 20px;
+  margin-left: 15px;
+}
+.login-sub-head-text{
+  margin: 0;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 5px;
+  font-size: clamp(18px, 1.5rem, 18px);
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+}
+.login-input-box{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 15px;
+  margin-top: 45px;
+  margin-right: 15px;
+}
+.login-in-box{
+  display: flex;
+  flex-direction: column;
+}
+.login-in-and-i-box{
+  display: flex;
+}
+.login-in{
+ width: 100%;
+ height: 40px;
+ border: 2px solid gray;
+ border-radius: 20px;
+ padding-left: 5px;
+}
+.login-in-i{
+  padding: 10px;
+  position: absolute;
+  margin-left: 80%;
+  font-size: 20px;
+  color: gray;
+}
+.login-in-text{
+  margin-left: 10px;
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+}
+.reb-pass-box{
+  display: flex;
+}
+.password-check{
+  width: 25px;
+}
+.password-check-text{
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.login-error-alert{
+  color: rgb(199, 42, 42);
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: none;
+}
+.login-btw{
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgb(247, 187, 76);
+  background-color: rgb(247, 187, 76);
+  border-radius: 20px;
+  font-size: 19px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+.registter-rederict{
+  display: flex;
+}
+.registter-rederict-text{
+  margin-left: 5px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.registter-rederict-link{
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 2px;
+  color: purple;
+}
+.socails-text{
+  text-align: center;
+  margin-top: 40px;
+  font-size: 19px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+}
+.login-socials-body{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.s-brands-i{
+  font-size: 40px;
+}
+.login-socials-box{
+  display: flex;
+  gap: 25px;
+}
+.fa-facebook {
+  color: blue;
+}
+.fa-telegram{
+  color: black;
+}
+.fa-whatsapp{
+  color: green;
+}
+.end-terms{
+  margin-top: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
+  text-align: center;
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+}
+/* register page */
+.register-head-text{
+  margin: 0;
+  font-size: clamp(28px, 3rem, 20px);
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 20px;
+  margin-left: 15px;
+}
+.register-sub-head-text{
+  margin: 0;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 5px;
+  font-size: clamp(18px, 1.5rem, 18px);
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+}
+.register-input-body{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 15px;
+  margin-top: 45px;
+  margin-right: 15px;
+}
+.register-in-box{
+  display: flex;
+  flex-direction: column;
+}
+.register-in-and-i-box{
+  display: flex;
+}
+.register-in{
+ width: 100%;
+ height: 40px;
+ border: 2px solid gray;
+ border-radius: 20px;
+ padding-left: 5px;
+}
+.register-in-i{
+  padding: 10px;
+  position: absolute;
+  margin-left: 80%;
+  font-size: 20px;
+  color: gray;
+}
+.register-in-text{
+  margin-left: 10px;
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+}
+.register-btw{
+  width: 100%;
+  height: 40px;
+  border: 1px solid rgb(247, 187, 76);
+  background-color: rgb(247, 187, 76);
+  border-radius: 20px;
+  font-size: 19px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+.login-rederict{
+  display: flex;
+}
+.login-rederict-text{
+  margin-left: 5px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.login-rederict-link{
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 2px;
+  color: purple;
+}
+.register-sig-up-massage{
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/**deposit**/
+.deposit-content-box{
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.deposit-head-text-box{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+.d-b-i{
+  font-size: 18px;
+}
+.deposit-head-text{
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(18px, 1.5rem, 18px);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.deposit-in-content-box{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.deposit-in-content-box{
+  margin-top: 40px;
+  margin-right: 5px;
+}
+.d-in-amount-text{
+  font-size: clamp(15px, 1rem, 16px);
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+}
+.in-d-amout{
+  width: 100%;
+  height: 40px;
+  border: 1px solid;
+  padding-left: 5px;
+}
+.deposit-terms{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.d-terms-text{
+  font-size: clamp(14px, 1rem, 15px);
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+}
+.deposit-btw{
+  margin-top: 20px;
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(107, 107, 235);
+  color: white;
+  border: 1px solid rgb(107, 107, 235);
+}
+.deposit-terms-end-text{
+  margin-top: 100px;
+}
+/** payment **/
+.payment-body{
+ display: flex;
+ justify-content: center;
+ position: relative;
+}
+.payment-content-box{
+  margin-top: 100px;
+  max-width: 600px;
+  min-width: 300px;
+  background-color: white;
+  border-radius: 12px;
+}
+.amount-display-box{
+  display: flex;
+  justify-content: end;
+  margin-right: 15px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.amount-d-text{
+  font-size: 24px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.sub-head-p{
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+.p-sub-h-t{
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.sub-sub-head-t{
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+}
+.p-d-c-b{
+  margin-left: 15px;
+  margin-right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: rgb(250, 247, 247);
+  border-radius: 10px;
+}
+.acount-n-and-bank-n{
+  display: flex;
+}
+.acount-n-b{
+  margin-right: auto;
+}
+.m-t{
+  padding-top: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+}
+.a-n-t{
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.acount-nA-and-refres-t{
+  display: flex;
+}
+.e-d-p-t{
+  padding-bottom: 15px;
+}
+.a-n-t-m{
+  margin-left: 30%;
+}
+.payment-confirm-and-reject-box{
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.payment-alert-i{
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: rgb(70, 70, 211);
+}
+.p-i-i{
+  margin-right: 2px;
+}
+.payment-alert-text{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.confirm-payment{
+  width: 100%;
+  height: 32px;
+  color: white;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid rgb(70, 70, 211);
+  background-color: rgb(70, 70, 211);
+  border-radius: 7px;
+}
+.reject-payment{
+  margin-top: 15px;
+  width: 100%;
+  height: 32px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid gray;
+  border-radius: 7px;
+  margin-bottom: 25px;
+}
+/**wallet info **/
+.wallet-head-box{
+  margin-top: 20px;
+  display: flex;
+}
+.wallet-b-i{
+  margin-left: 15px;
+  margin-right: auto;
+  font-size: 18px;
+}
+.wallet-head-text{
+  margin-left: -15px;
+  margin-right: auto;
+  font-size: clamp(17px, 2rem, 18px);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.wallet-content-body{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.wallet-horizontal-body{
+  margin-right: 10px;
+}
+.w-h-b-b{
+  margin-top: 30px;
+}
+.w-h-in{
+  width: 100%;
+  height: 40px;
+  padding-left: 3px;
+  border: 1px solid gray;
+}
+.w-h-c{
+  margin-left: 5px;
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+}
+.wallet-alart{
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: green;
+}
+.add-bank-box{
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+.add-bank{
+  width: 90%;
+  height: 40px;
+  color: white;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid rgb(70, 70, 211);
+  background-color: rgb(70, 70, 211);
+}
+/**team**/
+.team-head-box{
+  margin-top: 25px;
+  display: flex;
+}
+.t-b-i{
+  margin-left: 15px;
+  margin-right: auto;
+  font-size: 18px;
+}
+.team-head-text{
+  margin-left: -35px;
+  margin-right: auto;
+  font-size: clamp(17px, 2rem, 18px);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.coming-soon-box{
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+}
+.coming-soon-text{
+  font-size: clamp(17px, 2rem, 18px);
+  font-family: Arial, Helvetica, sans-serif;
+}
+/**invite **/
+.invite-head-box{
+  margin-top: 25px;
+  display: flex;
+}
+.invite-head-text{
+  margin-left: -35px;
+  margin-right: auto;
+  font-size: clamp(17px, 2rem, 18px);
+  font-family: Arial, Helvetica, sans-serif;
+}
+/*order successful*/
+.order-succesful-body{
+  background-color: white;
+  width: 100%;
+  height: 100vh;
+}
+.order-img-box{
+  padding-top: 150px;
+  display: flex;
+  justify-content: center;
+}
+.order-img{
+  width: 170px;
+  height: 150px;
+}
+.order-head-text-box{
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.order-head-text{
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.order-btw-box{
+  margin-top: 170px;
+  display: flex;
+  justify-content: center;
+}
+.order-btw{
+  width: 300px;
+  height: 35px;
+  color: white;
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid green;
+  background-color: green;
+}
+/**order rejected**/
+.order-rejected-body{
+  background-color: white;
+  width: 100%;
+  height: 100vh;
+}
+.order-rejected-head-box{
+  padding-top: 150px;
+  display: flex;
+  justify-content: center;
+}
+.order-rejected-img{
+  width: 170px;
+  height: 150px;
+}
+.order-rejected-head-text-box{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.order-rejected-head-text{
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.rejected-text{
+  text-align: center;
+  margin-top: 15px;
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+}
+.order-rejected-btw-box{
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+}
+.order-rejected-btw{
+  width: 300px;
+  height: 35px;
+  color: white;
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid red;
+  background-color: red;
+}
+/**coupon code**/
+.coupon-content-box{
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  background-color: rgb(240, 240, 240);
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  transition: all 1s ease-in;
+  display: none;
+}
+.coupon-back-i-box{
+  padding-top: 15px;
+  display: flex;
+  justify-content: end;
+}
+.fa-xmark{
+  margin-right: 20px;
+  font-size: 20px;
+}
+.coupon-head-text{
+  padding-top: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.coupon-in{
+  width: 90%;
+  height: 30px;
+  margin-top: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding-left: 5px;
+  border: 1px solid gray;
+}
+.coupon-alert-text{
+  margin-top: 15px;
+  font-size: 15px;
+  margin-left: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.coupon-btw{
+  height: 30px;
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  border: 1px solid green;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background-color: green;
+}
+/** logding animation **/
+.loading-animation-body{
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: none;
+}
+.loading-animation-box{
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  height: 100vb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  backdrop-filter: blur(2.2px);
+  touch-action: none;
+}
+.loading-animation-box span{
+  display: block;
+  width: 6px;
+  height: 30px;
+  margin: 1px;
+  background-color: #fbbf28;
+  animation: loading-animation-box 1.2s infinite ease-in-out;
+}
+.loading-animation-box span:nth-child(2) {
+  animation-delay:0.2s ;
+}
+.loading-animation-box span:nth-child(3) {
+  animation-delay:0.4s ;
+}
+.loading-animation-box span:nth-child(4) {
+  animation-delay:0.6s ;
+}
+.loading-animation-box span:nth-child(5) {
+  animation-delay:0.8s ;
+}
+
+@keyframes loading-animation-box  {
+  0%, 100%{ transform: scaleY(1);}
+  50% {transform: scaleY(2);}
+}
+/** payment pending**/
+.payment-succesful-body{
+  background-color: white;
+  width: 100%;
+  height: 100vh;
+}
+.payment-img-box{
+  padding-top: 150px;
+  display: flex;
+  justify-content: center;
+}
+.payment-img{
+  width: 150px;
+  height: 150px;
+}
+.payment-head-text-box{
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.payment-head-text{
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.payment-pending-alert-box{
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  display: flex;
+  justify-content: center;
+}
+.payment-pending-alert-text{
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+}
+.payment-btw-box{
+  margin-top: 170px;
+  display: flex;
+  justify-content: center;
+}
+.payment-btw{
+  width: 300px;
+  height: 35px;
+  color: white;
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid orange;
+  background-color: orange;
+}
+/** rejected **/
+.payment-rejectd-body{
+  background-color: white;
+  width: 100%;
+  height: 100vh;
+}
+.payment-rejectd-img-box{
+  padding-top: 150px;
+  display: flex;
+  justify-content: center;
+}
+.payment-rejectd-img{
+  width: 150px;
+  height: 150px;
+}
+.payment-rejectd-head-text-box{
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+.payment-rejectd-head-text{
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.payment-rejectd-alert-box{
+  margin-top: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  display: flex;
+  justify-content: center;
+}
+.payment-rejectd-alert-text{
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+}
+.payment-rejectd-btw-box{
+  margin-top: 170px;
+  display: flex;
+  justify-content: center;
+}
+.payment-rejectd-btw{
+  width: 300px;
+  height: 35px;
+  color: white;
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid red;
+  background-color: red;
+}
+/** addmin dasbord **/
+.addmin-dasbord-body{
+  background-color: white;
+  width: 100%;
+}
+.perent-contener-admin{
+  width: 100%;
+  display: flex;
+}
+.first-chlid-admin{
+  position: sticky;
+  top: 0;
+  background-color: white;
+  width: 250px;
+  height: 100vh;
+  height: 100dvb;
+  border-right: 2px solid gray;
+  border-left: 2px solid gray;
+  border-top: 2px solid gray;
+}
+/* menu tool bar**/
+.first-chlid-admin-content{
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  color: gray;
+}
+.admin-payment-and-withdrawal-body{
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  background-color: rgb(248, 243, 243);
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+}
+.admin-payment-and-withdrawal-head-text{
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.admin-payment-box{
+  display: flex;
+  gap: 3px;
+}
+.fa-paypal{
+  font-size: 18px;
+  color: blue;
+}
+.admin-payment-text{
+  font-size: 15px;
+  color: rgb(62, 223, 62);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.admin-withdrawal-box{
+  display: flex;
+  gap: 3px;
+}
+.fa-money-bill-transfer{
+  font-size: 18px;
+  color: orange;
+}
+.admin-withdrawal-text{
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.admin-succesful-rejected-and-pending-body{
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  background-color: rgb(248, 243, 243);
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+}
+.admin-succesful-rejected-and-pending-head-text{
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.admin-succesful-box{
+  display: flex;
+  gap: 3px;
+}
+.fa-check-circle{
+  font-size: 18px;
+  color: green;
+}
+.admin-succesful-text{
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.admin-pending-box{
+  display: flex;
+  gap: 3px;
+}
+.fa-hourglass-half{
+  font-size: 18px;
+  color: rgb(230, 165, 45);
+}
+.admin-pending-text{
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.admin-succesful-box{
+  display: flex;
+  gap: 3px;
+}
+.fa-check-circle{
+  font-size: 18px;
+  color: green;
+}
+.admin-succesful-text{
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.admin-rejected-box{
+  display: flex;
+  gap: 3px;
+}
+.fa-times-circle{
+  font-size: 18px;
+  color: red;
+}
+.admin-rejected-text{
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.admin-all-box{
+  display: flex;
+  gap: 3px;
+}
+.fa-check{
+  font-size: 18px;
+  color: purple;
+}
+.admin-all-text{
+  font-size: 15px;
+  color: rgb(62, 223, 62);
+  font-family: Arial, Helvetica, sans-serif;
+}
+/** search **/
+.admin-search-body{
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  background-color: rgb(248, 243, 243);
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+}
+.admin-search-head-text{
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.admin-search-date-text{
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 5px;
+}
+.admin-search-date-in{
+  width: 200px;
+  height: 25px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding-left: 5px;
+}
+.admin-search-name-text{
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 5px;
+}
+.admin-search-name-in{
+  width: 200px;
+  height: 25px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  padding-left: 5px;
+}
+.search-error-alert{
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: red;
+}
+.search-box{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.search{
+  width: 208px;
+  height: 25px;
+  border: 1px solid purple;
+  border-radius: 10px;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: purple;
+}
+/** new transaction alert **/
+.admin-transaction-alert-body{
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  background-color: rgb(248, 243, 243);
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 15px;
+}
+.admin-transaction-alert-head-text{
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.admin-transaction-payment-alert-box{
+  display: flex;
+  gap: 3px;
+}
+.admin-transaction-alert-payment{
+  font-size: 15px;
+  color: blue;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.admin-transaction-alert-payment-text{
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.admin-transaction-withdrawal-alert-box{
+  display: flex;
+  gap: 3px;
+}
+.admin-transaction-alert-withdrawal{
+  font-size: 15px;
+  color: orange;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.admin-transaction-alert-withdrawal-text{
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/**/
+.middle-chlid-admin{
+  margin-right: auto;
+}
+.middle-chlid-admin-content-body{
+  width: 550px;
+  margin-right: auto;
+}
+.addmin-sub-dasbord-body{
+  margin-top: 20px;
+  top: 0;
+  display: grid;
+  grid-template-columns: 16vw 16vw 16vw 16vw;
+  margin-left: 20px;
+}
+.sub-t-t{
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.addim-user-content-box{
+  margin-top: 15px;
+  margin-left: 20px;
+  display: grid;
+  grid-template-columns: 16vw 16vw 16vw 16vw;
+}
+.addim-sub-user-content-box{
+  margin-right: 5px;
+}
+.a-u-b{
+  display: flex;
+}
+.addmin-u-i{
+  font-size: 30px;
+  margin-right: 3px;
+}
+.a-u-c-t{
+  margin-top: 7px;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.addmin-user-tool-body{
+  width: 300px;  
+  height: 100vh;
+  height: 100dvb;
+  position: sticky;
+  top: 0;
+  border-right: 2px solid gray;
+  border-left: 2px solid gray;
+  border-top: 2px solid gray;
+}
+.addmin-user-tool-box{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+.a-u-t-i-b{
+  display: flex;
+  justify-content: center;
+}
+.a-u-t-i-bx{
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.a-u-t-i{
+  font-size: 80px;
+}
+.a-u-n-t{
+  font-size: 20px;
+  margin-top: 7px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.a-u-b-t{
+  font-size: 20px;
+  margin-top: 7px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+}
+.a-payment-u-b{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.a-u-t-t-b{
+  display: flex;
+  justify-content: center;
+}
+.a-u-t-t-bx{
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.a-u-t-t-t{
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.a-u-t-st-t{
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+.a-payment-u-bank-b{
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(228, 224, 224);
+  border-radius: 7px;
+}
+.a-payment-u-bank-bx{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.addmin-bank-text{
+  font-size: 14px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+}
+.a-payment-u-bx{
+  display: flex;
+  flex-direction: column;
+}
+.addmin-amount-tool-text{
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+  margin-left: 5px;
+}
+.addmin-amount-tool-in{
+  margin-top: 2px;
+  width: 100%;
+  height: 25px;
+  border: 1px solid gray;
+  padding-left: 5px;
+  border-radius: 10px;
+}
+.a-payment-accept-reject-b{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.a-payment-accept-reject-bx{
+  display: flex;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+.a-tool-reject{
+  width: 70px;
+  height: 30px;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid red;
+  color: red;
+  border-radius: 7px;
+}
+.a-tool-accept{
+  width: 70px;
+  height: 30px;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid green;
+  color: green;
+  border-radius: 7px;
+}
+/**coupon**/
+.addmin-coupon-b{
+  margin-top: 20px;
+  border-top: 2px solid gray;
+  display: flex;
+  justify-content: center;
+}
+.addmin-coupon-bx{
+  margin-top: 20px;
+}
+.addmin-coupon-head-text{
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 2px;
+  color: gray;
+  padding-bottom: 2px;
+}
+.ad-coupon-in{
+  width: 100%;
+  height: 25px;
+  padding-left: 7px;
+  border: 1px solid gray;
+  border-radius: 7px;
+}
+.ad-coupon-text{
+  margin-top: 15px;
+  text-align: center;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+}
+.a-coupon-g-s-btw-bx{
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.a-coupon-g-s-btw{
+  width: 100px;
+  height: 30px;
+  border: 1px solid blue;
+  border-radius: 7px;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: blue;
+  margin-bottom: 30%;
+}
+.addmin-user-count-b{
+  border-top: 2px solid gray;
+  display: flex;
+  justify-content: center;
+}
+.addmin-user-count-bx{
+  padding-top: 40px;
+  padding-bottom: 20px;
+  display: flex;
+}
+.addmin-user-count-s-text{
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.addmin-user-count-m-text{
+  font-size: 15px;
+  margin-left: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+}
+/** registration alert **/
+
+.registration_body{
+  display: flex;
+  justify-content: center;
+}
+.registration-content-box{
+  position: absolute;
+  margin-top: 20px;
+  background-color: rgb(250, 247, 247);
+  border-style: outset;
+  text-align: center;
+  padding-top: 7px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 7px;
+  border-radius: 20px;
+  transition: all ease-in 1s;
+  display: none;
+}
+.registration-text{
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/**about**/
+.about-company-content-body{
+  margin-top: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.about-company-content-text{
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+/** invest **/
+.about-invest-content-body{
+  margin-top: 20px;
+}
+.about-invest-content-head-text{
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin-bottom: 40px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.invest-key-words{
+  margin-left: 7px;
+  margin-right: 7px;
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-style: italic;
+}
+.invest-options{
+  margin-left: 7px;
+  margin-right: 7px;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.invest-plans{
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.invest-context-body{
+  margin-left: 7px;
+  margin-right: 7px;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.end-important-note{
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+.invest-earn-body{
+  margin-bottom: 15px;
+}
+/** tearms of use **/
+.about-teams-use-content-body{
+  margin-top: 40px;
+  margin-left: 7px;
+  margin-right: 7px;
+}
+.teams-use-head-text{
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.teams-use-text{
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+.teams-use-text-top{
+  margin-top: 20px;
+}
+.teams-use-options{
+  margin-top: 7px;
+  margin-bottom: 7px;
+  font-size: 16.5px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.teams-use-end-text{
+  margin-bottom: 15px;
+}
